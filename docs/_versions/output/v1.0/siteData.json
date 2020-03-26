@@ -1,0 +1,491 @@
+{
+  "enableSearch": true,
+  "pages": [
+    {
+      "title": "About Us",
+      "header": "header.md",
+      "footer": "footer.md",
+      "src": "about.md",
+      "layout": "default",
+      "headings": {
+        "about-us": "About Us"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Showcase",
+      "header": "header.md",
+      "footer": "footer.md",
+      "src": "showcase.md",
+      "layout": "default",
+      "headings": {
+        "examples-of-markbind-websites": "Examples of MarkBind Websites",
+        "course-websites": "Course Websites",
+        "online-books": "Online Books",
+        "product-websites": "Product Websites"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "User Guide: Adding Pages",
+      "layout": "userGuide",
+      "src": "userGuide/addingPages.md",
+      "headings": {
+        "adding-pages": "Adding Pages"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "User Guide: Authoring Contents",
+      "layout": "userGuide",
+      "src": "userGuide/authoringContents.md",
+      "headings": {
+        "authoring-contents": "Authoring Contents"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "User Guide: Command Line Interface (CLI)",
+      "layout": "userGuide",
+      "pageNav": "default",
+      "src": "userGuide/cliCommands.md",
+      "headings": {
+        "markbind-cli": "MarkBind CLI",
+        "overview": "Overview",
+        "init-command": "init Command",
+        "serve-command": "serve Command",
+        "build-command": "build Command",
+        "archive-command": "archive Command",
+        "rebuild-archive-command": "rebuild-archive Command",
+        "remove-archive-command": "remove-archive Command",
+        "deploy-command": "deploy Command",
+        "help-option": "--help Option"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "User Guide: Deploying the Site",
+      "layout": "userGuide",
+      "pageNav": "default",
+      "src": "userGuide/deployingTheSite.md",
+      "headings": {
+        "deploying-the-site": "Deploying the Site",
+        "deploying-to-github-pages": "Deploying to Github Pages",
+        "deploying-to-github-pages-via-travis-ci": "Deploying to GitHub Pages via Travis CI",
+        "adding-your-repository-to-travis-ci": "Adding your repository to Travis CI",
+        "configuring-your-repository-in-travis-ci": "Configuring your repository in Travis CI",
+        "configuring-travis-ci-to-use-a-specific-markbind-version": "Configuring Travis CI to use a specific MarkBind version",
+        "configuring-travis-ci-to-only-deploy-from-a-specific-repository": "Configuring Travis CI to only deploy from a specific repository",
+        "deploying-to-netlify": "Deploying to Netlify",
+        "setting-up-netlify-to-use-a-specific-version-of-markbind": "Setting up Netlify to use a specific version of MarkBind"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "User Guide: Formatting Contents",
+      "layout": "userGuide",
+      "pageNav": 2,
+      "src": "userGuide/formattingContents.md",
+      "headings": {
+        "formatting-contents": "Formatting Contents",
+        "headings": "Headings",
+        "heading-level-3": "Heading level 3",
+        "heading-level-6": "Heading level 6",
+        "heading-level-3-2": "Heading level 3",
+        "heading-level-6-2": "Heading level 6",
+        "paragraphs": "Paragraphs",
+        "line-breaks": "Line Breaks",
+        "text-styles": "Text Styles",
+        "blockquotes": "Blockquotes",
+        "lists": "Lists",
+        "code": "Code",
+        "fenced-code": "Fenced Code",
+        "syntax-coloring": "Syntax coloring",
+        "line-numbering": "Line numbering",
+        "line-highlighting": "Line highlighting",
+        "heading": "Heading",
+        "using-multiple-features": "Using multiple features",
+        "inline-code": "Inline Code",
+        "syntax-coloring-2": "Syntax coloring",
+        "horizontal-rules": "Horizontal Rules",
+        "links": "Links",
+        "intra-site-links": "Intra-Site Links",
+        "footnotes": "Footnotes",
+        "images": "Images",
+        "tables": "Tables",
+        "emoji": "Emoji",
+        "icons": "Icons",
+        "using-font-awesome-icons": "Using Font Awesome Icons",
+        "using-glyphicons": "Using Glyphicons",
+        "using-octicons": "Using Octicons",
+        "embeds": "Embeds",
+        "embedding-youtube-videos": "Embedding Youtube Videos",
+        "embedding-powerpoint-slides-using-the-embed-url-from-powerpoint-online": "Embedding Powerpoint Slides (using the embed url from Powerpoint online)"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "User Guide - Getting Started",
+      "layout": "userGuide",
+      "src": "userGuide/gettingStarted.md",
+      "headings": {
+        "getting-started": "Getting Started"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Glossary",
+      "layout": "userGuide",
+      "src": "userGuide/glossary.md",
+      "headings": {
+        "live-preview": "Live Preview",
+        "mbd-extension": ".mbd extension"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "User Guide - Getting Started",
+      "layout": "userGuide",
+      "src": "userGuide/index.md",
+      "headings": {
+        "getting-started": "Getting Started"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "User Guide: Making the Site Searchable",
+      "layout": "userGuide",
+      "pageNav": 2,
+      "src": "userGuide/makingTheSiteSearchable.md",
+      "headings": {
+        "making-the-site-searchable": "Making the Site Searchable",
+        "search-bars": "Search Bars",
+        "keywords": "Keywords",
+        "including-or-excluding-headings": "Including or Excluding Headings"
+      },
+      "headingKeywords": {
+        "keywords": [
+          "regressions"
+        ]
+      }
+    },
+    {
+      "title": "User Guide: MarkBind in the Project Workflow",
+      "layout": "userGuide",
+      "src": "userGuide/markBindInTheProjectWorkflow.md",
+      "headings": {
+        "markbind-in-the-project-workflow": "MarkBind in the Project Workflow",
+        "authoring-workflow": "Authoring Workflow",
+        "github-project-workflow": "GitHub Project Workflow",
+        "using-markbind-for-project-documentation": "Using MarkBind for Project Documentation",
+        "converting-existing-project-documentation-wiki": "Converting existing project documentation/wiki"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "User Guide: MarkBind Syntax Overview ",
+      "layout": "userGuide",
+      "src": "userGuide/markBindSyntaxOverview.md",
+      "headings": {
+        "markbind-syntax-overview": "MarkBind Syntax Overview",
+        "support-for-markdown": " Support for Markdown",
+        "support-for-gfmd": " Support for GFMD",
+        "markbind-extensions-to-markdown": " MarkBind Extensions to Markdown",
+        "markbind-custom-syntax": " MarkBind Custom Syntax",
+        "support-for-html-javascript-css": " Support for HTML, JavaScript, CSS",
+        "support-for-vuestrap-and-bootstrap": " Support for VueStrap and BootStrap",
+        "support-for-nunjucks": " Support for Nunjucks"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "User Guide - PlantUML Diagrams",
+      "layout": "userGuide",
+      "src": "userGuide/puml.md",
+      "headings": {
+        "plantuml-diagrams": "PlantUML Diagrams",
+        "usage": "Usage",
+        "example": "Example"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "User Guide: Reusing Contents",
+      "layout": "userGuide",
+      "pageNav": 4,
+      "src": "userGuide/reusingContents.md",
+      "headings": {
+        "reusing-contents": "Reusing Contents",
+        "variables": "Variables",
+        "global-variables": "Global Variables",
+        "built-in-global-variables": "Built-in Global Variables",
+        "built-in-variable-baseurl": "Built-in Variable: baseUrl",
+        "built-in-variable-timestamp": "Built-in Variable: timestamp",
+        "built-in-variable-markbind": "Built-in Variable: MarkBind",
+        "variables-defaults": "Variables: Defaults",
+        "page-variables": "Page Variables",
+        "importing-variables": "Importing Variables",
+        "variables-tips-and-tricks": "Variables: Tips and Tricks",
+        "includes": "Includes",
+        "and-lt-include-and-gt-inside-an-included-file": "&lt;include&gt; Inside an Included File",
+        "specifying-variables-in-an-and-lt-include-and-gt": "Specifying Variables in an &lt;include&gt;",
+        "using-boilerplate-files": "Using Boilerplate Files",
+        "reusing-contents-across-sites": "Reusing Contents Across Sites",
+        "creating-content-variations": "Creating Content Variations",
+        "allowing-users-to-remove-some-contents": "Allowing users to remove some contents",
+        "giving-alternative-contents": "Giving alternative contents",
+        "giving-access-to-additional-contents": "Giving access to additional contents",
+        "organizing-contents-in-alternative-ways": "Organizing contents in alternative ways",
+        "optimizing-the-print-view": "Optimizing the Print View",
+        "hiding-some-info-in-the-generated-content": "Hiding some info in the generated content",
+        "creating-slight-variations-of-content": "Creating slight variations of content"
+      },
+      "headingKeywords": {
+        "optimizing-the-print-view": [
+          "hide minimized panels in the print view"
+        ]
+      }
+    },
+    {
+      "title": "Configuring the Site",
+      "layout": "userGuide",
+      "keywords": "site.json",
+      "src": "userGuide/siteConfiguration.md",
+      "headings": {
+        "configuring-the-site": "Configuring the Site",
+        "baseurl": "baseUrl",
+        "faviconpath": "faviconPath",
+        "titleprefix": "titlePrefix",
+        "theme": "theme",
+        "pages": "pages",
+        "externalscripts": "externalScripts",
+        "globaloverride": "globalOverride",
+        "ignore": "ignore",
+        "deploy": "deploy",
+        "plugins-pluginscontext": "plugins, pluginsContext",
+        "headingindexinglevel": "headingIndexingLevel",
+        "enablesearch": "enableSearch",
+        "timezone": "timeZone",
+        "locale": "locale"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "User Guide: Templates",
+      "layout": "userGuide",
+      "src": "userGuide/templates.md",
+      "headings": {
+        "templates": "Templates",
+        "supported-templates": "Supported Templates"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "User Guide: Themes",
+      "layout": "userGuide",
+      "src": "userGuide/themes.md",
+      "headings": {
+        "themes": "Themes",
+        "specifying-a-theme": "Specifying a Theme",
+        "supported-themes": "Supported Themes",
+        "bootswatch-cerulean": "bootswatch-cerulean",
+        "bootswatch-cosmo": "bootswatch-cosmo",
+        "bootswatch-flatly": "bootswatch-flatly",
+        "bootswatch-journal": "bootswatch-journal",
+        "bootswatch-litera": "bootswatch-litera",
+        "bootswatch-lumen": "bootswatch-lumen",
+        "bootswatch-lux": "bootswatch-lux",
+        "bootswatch-materia": "bootswatch-materia",
+        "bootswatch-minty": "bootswatch-minty",
+        "bootswatch-pulse": "bootswatch-pulse",
+        "bootswatch-sandstone": "bootswatch-sandstone",
+        "bootswatch-simplex": "bootswatch-simplex",
+        "bootswatch-sketchy": "bootswatch-sketchy",
+        "bootswatch-spacelab": "bootswatch-spacelab",
+        "bootswatch-united": "bootswatch-united",
+        "bootswatch-yeti": "bootswatch-yeti"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "User Guide: Tips & Tricks",
+      "layout": "userGuide",
+      "src": "userGuide/tipsAndTricks.md",
+      "headings": {
+        "tips-and-amp-tricks": "Tips &amp; Tricks",
+        "tip-escaping-characters": "Tip: Escaping Characters",
+        "problem-unwanted-starting-space-in-links-and-triggers": "Problem: Unwanted starting space in links and triggers"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "User Guide: Tweaking the Page Structure",
+      "layout": "userGuide",
+      "pageNav": 2,
+      "src": "userGuide/tweakingThePageStructure.md",
+      "headings": {
+        "tweaking-the-page-structure": "Tweaking the Page Structure",
+        "front-matter": "Front Matter",
+        "page-and-lt-head-and-gt": "Page &lt;head&gt;",
+        "headers": "Headers",
+        "footers": "Footers",
+        "site-navigation-menus": "Site Navigation Menus",
+        "page-navigation-menus": "Page Navigation Menus",
+        "page-layouts": "Page Layouts",
+        "attaching-event-listeners-in-scripts-js": "Attaching event listeners in scripts.js",
+        "using-expressive-layout-templates": "Using Expressive Layout Templates",
+        "main-content-of-your-page": "Main content of your page",
+        "tags": "Tags",
+        "toggling-alternative-contents-in-a-page": "Toggling alternative contents in a page",
+        "advanced-tagging-tips": "Advanced Tagging Tips",
+        "hiding-tags": "Hiding Tags"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "User Guide: Using Components",
+      "layout": "userGuide",
+      "pageNav": "default",
+      "src": "userGuide/usingComponents.md",
+      "headings": {
+        "using-components": "Using Components",
+        "badges": "Badges",
+        "boxes": "Boxes",
+        "dropdowns": "Dropdowns",
+        "modals": "Modals",
+        "navbars": "Navbars",
+        "page-navigation-menus": "Page Navigation Menus",
+        "panels": "Panels",
+        "pictures": "Pictures",
+        "popovers": "Popovers",
+        "questions": "Questions",
+        "site-navigation-menus": "Site Navigation Menus",
+        "tabs": "Tabs",
+        "thumbnails": "Thumbnails",
+        "tooltips": "Tooltips",
+        "advanced-tips-and-tricks": "Advanced Tips and Tricks",
+        "rich-formatting-in-headings-titles": "Rich formatting in headings/titles",
+        "inserting-custom-classes-into-components": "Inserting custom classes into components"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "User Guide: Using HTML, JavaScript, CSS",
+      "layout": "userGuide",
+      "src": "userGuide/usingHtmlJavaScriptCss.md",
+      "headings": {
+        "using-html-javascript-css": "Using HTML, JavaScript, CSS",
+        "apples-bananas-cherries": "Apples Bananas Cherries"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "User Guide: Using Plugins",
+      "layout": "userGuide",
+      "pageNav": "default",
+      "src": "userGuide/usingPlugins.md",
+      "headings": {
+        "using-plugins": "Using Plugins",
+        "adding-plugins": "Adding Plugins",
+        "writing-plugins": "Writing Plugins",
+        "rendering": "Rendering",
+        "assets": "Assets",
+        "live-reload": "Live reload",
+        "special-tags": "Special tags",
+        "advanced-default-plugins": "Advanced: Default plugins",
+        "built-in-plugins": "Built-in plugins",
+        "algolia-enabling-algolia-docsearch": "algolia: Enabling Algolia DocSearch",
+        "codeblockcopybuttons-enabling-code-blocks-to-be-copied": "codeBlockCopyButtons: Enabling code-blocks to be copied",
+        "tags": "Tags",
+        "toggling-alternative-contents-in-a-page": "Toggling alternative contents in a page",
+        "advanced-tagging-tips": "Advanced Tagging Tips",
+        "hiding-tags": "Hiding Tags",
+        "google-analytics-enhancing-site-with-google-analytics": "Google Analytics: Enhancing site with Google Analytics"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "User Guide: Versioning",
+      "layout": "userGuide",
+      "pageNav": "default",
+      "src": "userGuide/versioning.md",
+      "headings": {
+        "versioning": "Versioning",
+        "archiving-a-site-version": "Archiving a site version",
+        "rebuilding-past-versions": "Rebuilding past versions",
+        "removing-past-versions": "Removing past versions"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Developer Guide",
+      "layout": "devGuide",
+      "pageNav": "default",
+      "src": "devGuide/devGuide.md",
+      "headings": {
+        "requirement": "Requirement",
+        "environment": "Environment",
+        "project-structure": "Project Structure",
+        "markbind-core-library": "MarkBind Core Library",
+        "markbind-cli": "MarkBind CLI",
+        "vuestrap": "VueStrap",
+        "development-process": "Development Process",
+        "prerequisite": "Prerequisite",
+        "development": "Development",
+        "troubleshooting": "Troubleshooting",
+        "testing": "Testing",
+        "running-tests": "Running tests",
+        "updating-tests": "Updating tests",
+        "new-features": "New features",
+        "using-eslint": "Using ESLint",
+        "installation": "Installation",
+        "lint-your-code": "Lint your code",
+        "integration-with-editors": "Integration with editors"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Developer Guide",
+      "layout": "devGuide",
+      "pageNav": "default",
+      "src": "devGuide/index.md",
+      "headings": {
+        "requirement": "Requirement",
+        "environment": "Environment",
+        "project-structure": "Project Structure",
+        "markbind-core-library": "MarkBind Core Library",
+        "markbind-cli": "MarkBind CLI",
+        "vuestrap": "VueStrap",
+        "development-process": "Development Process",
+        "prerequisite": "Prerequisite",
+        "development": "Development",
+        "troubleshooting": "Troubleshooting",
+        "testing": "Testing",
+        "running-tests": "Running tests",
+        "updating-tests": "Updating tests",
+        "new-features": "New features",
+        "using-eslint": "Using ESLint",
+        "installation": "Installation",
+        "lint-your-code": "Lint your code",
+        "integration-with-editors": "Integration with editors"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "title": "Maintainer Guide",
+      "layout": "devGuide",
+      "pageNav": "default",
+      "src": "devGuide/maintainerGuide.md",
+      "headings": {
+        "pr-merging-workflow": "PR Merging Workflow",
+        "approval": "Approval",
+        "actual-merging": "Actual Merging",
+        "doing-a-release": "Doing a Release",
+        "prerequisites-for-new-maintainers": "Prerequisites for New Maintainers",
+        "building-vue-strap": "Building Vue-Strap",
+        "building-markbind": "Building MarkBind"
+      },
+      "headingKeywords": {}
+    }
+  ]
+}

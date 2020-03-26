@@ -1,0 +1,57 @@
+{
+  "baseUrl": "",
+  "titlePrefix": "MarkBind",
+  "pages": [
+    {
+      "glob": "**/*.mbd"
+    },
+    {
+      "glob": "*.md"
+    },
+    {
+      "src": "index.md",
+      "searchable": "no"
+    },
+    {
+      "glob": "userGuide/*.md"
+    },
+    {
+      "src": "userGuide/fullSyntaxReference.md",
+      "searchable": "no"
+    },
+    {
+      "src": "userGuide/syntaxCheatSheet.md",
+      "searchable": "no"
+    },
+    {
+      "src": "userGuide/readerFacingFeatures.md",
+      "searchable": "no"
+    }
+  ],
+  "plugins" : [
+    "filterTags"
+  ],
+  "pluginsContext" : {
+    "filterTags" : {
+      "tags": ["environment--ug"]
+    }
+  },
+  "headingIndexingLevel": 6,
+  "ignore": [
+    "_markbind",
+    "_site/*",
+    "lib/*",
+    "*.json",
+    "*.md",
+    "*.mbd",
+    "*.mbdf",
+    "*.njk",
+    ".git/*",
+    "*.pptx"
+  ],
+  "deploy": {
+    "message": "Site Update.",
+    "repo": "https://github.com/MarkBind/markbind.github.io.git",
+    "branch": "master"
+  }
+}

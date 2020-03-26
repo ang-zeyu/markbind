@@ -1,0 +1,29 @@
+## Images
+
+<include src="outputBox.md" boilerplate >
+<span id="code">
+
+```markdown
+![](https://markbind.org/images/logo-lightbackground.png)
+```
+<box type="info">
+  URLs can be specified as relative references. More info in: <i><a href="#intraSiteLinks">Intra-Site Links</a></i>
+</box>
+
+</span>
+<span id="output">
+
+![alt text here](https://markbind.org/images/logo-lightbackground.png "title here")
+</span>
+</include>
+
+<span id="short" class="d-none">
+```markdown
+![alt text here](https://markbind.org/images/logo-lightbackground.png "title here")
+```
+</span>
+
+<span id="examples" class="d-none">
+
+![alt text here](https://markbind.org/images/logo-lightbackground.png "title here")
+</span>

@@ -1,0 +1,15 @@
+{
+  "current": {
+    "baseUrl": "/"
+  },
+  "versions": {
+    "v1.0": {
+      "baseUrl": "/versions/v1.0",
+      "keepSource": true
+    },
+    "v2.0": {
+      "baseUrl": "/versions/v2.0",
+      "keepSource": true
+    }
+  }
+}

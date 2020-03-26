@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="MarkBind 2.12.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MarkBind - User Guide: Versioning</title>
+  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
+  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+  <link rel="stylesheet" href="../markbind/css/octicons.css">
+  <link rel="stylesheet" href="../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.css">
+  <link rel="stylesheet" href="../markbind/layouts/userGuide/styles.css">
+  <link rel="stylesheet" href="../markbind/css/site-nav.css">
+  <link rel="stylesheet" href="../markbind/css/page-nav.css">
+  <link rel="icon" href="/versions/v1.0/favicon.ico">
+</head>
+
+<body data-spy="scroll" data-target="#page-nav" data-offset="100">
+  <div id="app">
+    <header>
+      <link rel="stylesheet" href="/versions/v1.0/css/main.css">
+      <navbar type="dark" class="temp-navbar">
+        <a slot="brand" href="/versions/v1.0/index.html" title="Home" class="navbar-brand"><img src="/versions/v1.0/images/logo-darkbackground.png" height="20"></a>
+        <li><a href="/versions/v1.0/index.html" class="nav-link">HOME</a></li>
+        <div tags="environment--ug">
+          <li><a href="/versions/v1.0/userGuide/index.html" class="nav-link">USER GUIDE</a></li>
+        </div>
+        <div tags="environment--dg">
+          <li><a href="/versions/v1.0/devGuide/index.html" class="nav-link">DEVELOPER GUIDE</a></li>
+        </div>
+        <li><a href="/versions/v1.0/showcase.html" class="nav-link">SHOWCASE</a></li>
+        <li><a href="/versions/v1.0/about.html" class="nav-link">ABOUT</a></li>
+        <li>
+          <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
+        <li slot="right">
+          <form class="navbar-form">
+            <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right=""></searchbar>
+          </form>
+        </li>
+      </navbar>
+    </header>
+    <div id="flex-body">
+      <nav id="site-nav" class="navbar navbar-light bg-transparent">
+        <div class="border-right-grey nav-inner position-sticky slim-scroll">
+          <p><span class="lead"><strong>User Guide</strong></span></p>
+          <ul class="px-0 site-nav-list">
+            <li class="mt-2"><a href="/versions/v1.0/userGuide/gettingStarted.html" class="site-nav__a">Getting Started</a></li>
+            <li class="mt-2"><a href="/versions/v1.0/userGuide/authoringContents.html" class="site-nav__a">Authoring Contents</a>
+              <ul class="pl-3 site-nav-list">
+                <li class="mt-2"><a href="/versions/v1.0/userGuide/addingPages.html" class="site-nav__a">Adding Pages</a></li>
+                <li class="mt-2"><a href="/versions/v1.0/userGuide/markBindSyntaxOverview.html" class="site-nav__a">MarkBind Syntax Overview</a></li>
+                <li class="mt-2"><a href="/versions/v1.0/userGuide/formattingContents.html" class="site-nav__a">Formatting Contents</a></li>
+                <li class="mt-2"><a href="/versions/v1.0/userGuide/puml.html" class="site-nav__a">Inserting PlantUML Diagrams</a></li>
+                <li class="mt-2"><a href="/versions/v1.0/userGuide/usingComponents.html" class="site-nav__a">Using Components</a></li>
+                <li class="mt-2"><a href="/versions/v1.0/userGuide/usingHtmlJavaScriptCss.html" class="site-nav__a">Using HTML, JavaScript, CSS</a></li>
+                <li class="mt-2"><a href="/versions/v1.0/userGuide/usingPlugins.html" class="site-nav__a">Using Plugins</a></li>
+                <li class="mt-2"><a href="/versions/v1.0/userGuide/tweakingThePageStructure.html" class="site-nav__a">Tweaking the Page Structure</a></li>
+                <li class="mt-2"><a href="/versions/v1.0/userGuide/reusingContents.html" class="site-nav__a">Reusing Contents</a></li>
+                <li class="mt-2"><a href="/versions/v1.0/userGuide/makingTheSiteSearchable.html" class="site-nav__a">Making the Site Searchable</a></li>
+              </ul>
+            </li>
+            <li class="mt-2"><a href="/versions/v1.0/userGuide/versioning.html" class="site-nav__a current">Versioning</a></li>
+            <li class="mt-2"><a href="/versions/v1.0/userGuide/deployingTheSite.html" class="site-nav__a">Deploying the Site</a></li>
+            <li class="mt-2"><a href="/versions/v1.0/userGuide/markBindInTheProjectWorkflow.html" class="site-nav__a">MarkBind in the Project Workflow</a></li>
+            <li class="mt-2"><a href="/versions/v1.0/userGuide/themes.html" class="site-nav__a">Themes</a></li>
+            <li class="mt-2"><button class="dropdown-btn dropdown-btn-open">References 
+ <i class="dropdown-btn-icon rotate-icon">
+<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></button>
+              <div class="dropdown-container dropdown-container-open">
+                <ul class="pl-3 site-nav-list">
+                  <li class="mt-2"><a href="/versions/v1.0/userGuide/cliCommands.html" class="site-nav__a">CLI Commands</a></li>
+                  <li class="mt-2"><a href="/versions/v1.0/userGuide/readerFacingFeatures.html" class="site-nav__a">Reader-Facing Features</a></li>
+                  <li class="mt-2"><a href="/versions/v1.0/userGuide/fullSyntaxReference.html" class="site-nav__a">Full Syntax Reference</a></li>
+                  <li class="mt-2"><a href="/versions/v1.0/userGuide/syntaxCheatSheet.html" class="site-nav__a">Syntax Cheat Sheet</a></li>
+                  <li class="mt-2"><a href="/versions/v1.0/userGuide/siteConfiguration.html" class="site-nav__a">Site Configuration</a></li>
+                  <li class="mt-2"><a href="/versions/v1.0/userGuide/tipsAndTricks.html" class="site-nav__a">Tips & Tricks</a></li>
+                  <li class="mt-2"><a href="/versions/v1.0/userGuide/glossary.html" class="site-nav__a">Glossary</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div id="content-wrapper">
+        <div></div>
+        <h1 id="versioning">Versioning<a class="fa fa-anchor" href="#versioning"></a></h1>
+        <span class="lead">
+<p><strong>MarkBind also supports several handy utilities for versioning your site.</strong></p></span>
+        <h2 id="archiving-a-site-version">Archiving a site version<a class="fa fa-anchor" href="#archiving-a-site-version"></a></h2>
+        <p>To archive a specific site version, you can use the <code>markbind archive &lt;version_name&gt;</code> <a href="/versions/v1.0/userGuide/cliCommands.html#archive-command">command</a>.</p>
+        <p>This builds and archives your current site into the <code>_versions/output/&lt;version_name&gt;</code> directory, while outputting it to the <code>versions/&lt;version_name&gt;</code> subdirectory in the output folder.</p>
+        <p>
+          <box type="warning"><template slot="_header"><p>On baseUrl</p></template><span>
+Note that versioning is highly dependent on the baseUrl you specify at the time of archiving.
+Hence, you should still choose your baseUrl wisely as good practice!
+</span></box>
+        </p>
+        <h2 id="rebuilding-past-versions">Rebuilding past versions<a class="fa fa-anchor" href="#rebuilding-past-versions"></a></h2>
+        <p>You can rebuild all versions previouslay archived with the <code>markbind rebuild-archive</code> <a href="/versions/v1.0/userGuide/cliCommands.html#rebuild-archive-command">command</a>, or a specific version with <code>markbind archive &lt;version&gt;</code>.</p>
+        <h2 id="removing-past-versions">Removing past versions<a class="fa fa-anchor" href="#removing-past-versions"></a></h2>
+        <p>To remove a specific version, you can use the <code>markbind remove-archive</code> <a href="/versions/v1.0/userGuide/cliCommands.html#remove-archive-command">command</a>.</p>
+      </div>
+      <nav id="page-nav" class="navbar navbar-light bg-transparent">
+        <div class="border-left-grey nav-inner position-sticky slim-scroll">
+
+          <nav class="nav nav-pills flex-column my-0 small no-flex-wrap">
+            <a class="nav-link py-1" href="#versioning">Versioning&#x200E;</a>
+            <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap">
+              <a class="nav-link py-1" href="#archiving-a-site-version">Archiving a site version&#x200E;</a>
+              <a class="nav-link py-1" href="#rebuilding-past-versions">Rebuilding past versions&#x200E;</a>
+              <a class="nav-link py-1" href="#removing-past-versions">Removing past versions&#x200E;</a>
+            </nav>
+
+          </nav>
+        </div>
+      </nav>
+    </div>
+    <footer>
+      <div class="text-center">
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.12.0</a> on Thu, Mar 26, 2020, 10:50:58 PM GMT+8]</small></div>
+    </footer>
+  </div>
+</body>
+<script src="../markbind/js/vue.min.js"></script>
+<script src="../markbind/js/vue-strap.min.js"></script>
+<script src="../markbind/js/bootstrap-utility.min.js"></script>
+<script src="../markbind/js/polyfill.min.js"></script>
+<script src="../markbind/js/bootstrap-vue.min.js"></script>
+<script>
+  const baseUrl = '/versions/v1.0'
+  const currentVersionBaseUrl = ''
+  const enableSearch = true
+</script>
+<script src="../markbind/js/setup.js"></script>
+<script src="../markbind/layouts/userGuide/scripts.js"></script>
+
+</html>

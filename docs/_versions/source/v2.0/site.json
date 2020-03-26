@@ -1,0 +1,60 @@
+{
+  "baseUrl": "",
+  "timeZone": "Asia/Singapore",
+  "titlePrefix": "MarkBind",
+  "pages": [
+    {
+      "glob": "**/*.mbd"
+    },
+    {
+      "glob": "*.md"
+    },
+    {
+      "src": "index.md",
+      "searchable": "no"
+    },
+    {
+      "glob": "userGuide/*.md"
+    },
+    {
+      "src": "userGuide/fullSyntaxReference.md",
+      "searchable": "no"
+    },
+    {
+      "src": "userGuide/syntaxCheatSheet.md",
+      "searchable": "no"
+    },
+    {
+      "src": "userGuide/readerFacingFeatures.md",
+      "searchable": "no"
+    },
+    {
+      "glob": "devGuide/*.md"
+    }
+  ],
+  "plugins" : [
+    "filterTags"
+  ],
+  "pluginsContext" : {
+    "filterTags" : {
+      "tags": ["environment--ug", "environment--dg"]
+    }
+  },
+  "headingIndexingLevel": 6,
+  "ignore": [
+    "_markbind",
+    "_site/*",
+    "lib/*",
+    "*.json",
+    "*.md",
+    "*.mbd",
+    "*.mbdf",
+    "*.njk",
+    ".git/*",
+    "*.pptx",
+    "CNAME"
+  ],
+  "deploy": {
+    "message": "Site Update."
+  }
+}
