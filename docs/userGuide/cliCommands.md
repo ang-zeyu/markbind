@@ -120,7 +120,7 @@ The caveat is that not building all pages during the initial process, or not reb
 ### `build` Command
 <br>
 
-**Format:** `markbind build [options] [root] [output]`
+**Format:** `markbind build [root] [output] [options]`
 
 **Alias:** `markbind b`
 
@@ -139,13 +139,17 @@ The caveat is that not building all pages during the initial process, or not reb
 
 **Options** :fas-cogs:
 
+<div id="build-options">
+
 * `--baseUrl <base>`<br>
-  Override the `baseUrl` property (read from the `site.json`) with the give `<base>` value.<br>
+  Override the `baseUrl` property (read from the `site.json`) with the given `<base>` value.<br>
   {{ icon_example }} `--baseUrl staging`
 
 * `-s <file>`, `--site-config <file>`<br>
   Specify the site config file (default: `site.json`)<br>
   {{ icon_example }} `-s otherSite.json`
+
+</div>
 
 **{{ icon_examples }}**
 * `markbind build`
@@ -153,6 +157,128 @@ The caveat is that not building all pages during the initial process, or not reb
 * `markbind build ./stagingDir --baseUrl staging`
 
 </panel>
+
+<hr><!-- ========================================================================== -->
+
+### `archive` Command
+<br>
+
+**Format:** `markbind archive <version_name> [root] [output] [options]`
+
+**Alias:** `markbind a`
+
+**Description:** Builds and archives the site to the `_versions/output/<version_name>`,
+                 while outputting it to the `versions` subdirectory in the output folder.
+
+**Arguments:**
+* `<version_name>`<br>
+  The version name to use.
+  {{ icon_example }} `v1.0`
+
+* `[output]`<br>
+  The output directory of the site (not the archived version)<br>
+  {{ icon_example }} `../myOutDir`
+
+* `[root]`<br>
+  The root directory of the site's source files<br>
+  {{ icon_example }} `./docs`
+
+<panel header="**Options** :fas-cogs:" type="minimal">
+
+**Options** :fas-cogs:
+
+<panel header="Shared options from `markbind build`" type="minimal" src="cliCommands.md/#build-options" />
+
+`markbind archive` options:
+
+* `-r`, `--remove-source`<br>
+  By default, markbind also archives your source files and assets to `_versions/source/<version_name>` so that you
+  can make changes later on easily, such as changing the baseUrl of past versions.
+  If you are using version control, and want full manual control over version control of source files and assets instead,
+  you can use this option to disable archiving of source files.
+
+<box type="warning" header="Using `-r` with `markbind rebuild-archive`"><md>
+Note that if you use this option, `markbind rebuild-archive` will not be able to rebuild this version later on automatically!
+Instead, you would have to checkout the appropriate version in your version control system and archive the site again from there.
+</md></box>
+
+**{{ icon_examples }}**
+* `markbind archive 1.0`
+* `markbind archive 1.0 --baseUrl /userGuide` - builds the site using the `/userGuide` baseUrl instead.
+
+</panel>
+
+<hr><!-- ========================================================================== -->
+
+### `rebuild-archive` Command
+<br>
+
+**Format:** `markbind rebuild-archive [root] [output] [options]`
+
+**Alias:** `markbind r`
+
+**Description:** Rebuilds all previous versions of the site which's source files was preserved (the default),
+                 then builds the current site and copies the version output to the output directory with the current site.
+                 The `baseUrl` used in generating all sites is as specified with the `--baseUrl` option or the one in the
+                 root site configuration file.
+
+**Arguments:**
+* `[output]`<br>
+  The output directory of the site<br>
+  {{ icon_example }} `../myOutDir`
+
+* `[root]`<br>
+  The root directory of the site's source files<br>
+  {{ icon_example }} `./docs`
+
+<panel header="**Options** :fas-cogs:" type="minimal">
+
+**Options** :fas-cogs:
+
+<panel header="Shared options from `markbind build`" type="minimal" src="cliCommands.md/#build-options" />
+
+`markbind rebuild-archive` options:
+
+* `-b`, `--build`<br>
+  Build the current site as well, and copy all previously generated versions to the output folder.
+
+**{{ icon_examples }}**
+* `markbind rebuild-archive`
+* `markbind rebuild-archive -b`
+
+</panel>
+
+<hr><!-- ========================================================================== -->
+
+### `remove-archive` Command
+<br>
+
+**Format:** `markbind remove-archive [version] [root] [options]`
+
+**Description:** Removes a previously built archive version properly, updating the `json` file markbind uses internally.
+
+**Arguments:**
+* `[version]`<br>
+  The version name to remove<br>
+  {{ icon_example }} `v1.0`
+
+* `[root]`<br>
+  The root directory of the site's source files<br>
+  {{ icon_example }} `./docs`
+
+
+**Options** :fas-cogs:
+
+* `--all-versions`<br>
+  Removes all versions. Ignored if `[version]` is specified.
+* `-s <file>`, `--site-config <file>`<br>
+  Specify the site config file (default: `site.json`)<br>
+  {{ icon_example }} `-s otherSite.json`
+
+
+**{{ icon_examples }}**
+* `markbind remove-archive v1.0`
+* `markbind remove-archive --all-versions`
 
 <hr><!-- ========================================================================== -->
 

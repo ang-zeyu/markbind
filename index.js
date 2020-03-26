@@ -8,6 +8,8 @@ const liveServer = require('live-server');
 const path = require('path');
 const program = require('commander');
 const Promise = require('bluebird');
+const ignore = require('ignore');
+const walkSync = require('walk-sync');
 
 const _ = {};
 _.isBoolean = require('lodash/isBoolean');
@@ -23,6 +25,11 @@ const {
   ACCEPTED_COMMANDS_ALIAS,
   INDEX_MARKDOWN_FILE,
   LAZY_LOADING_SITE_FILE_NAME,
+  SITE_CONFIG_NAME,
+  SITE_FOLDER_NAME,
+  VERSIONS_DATA_FILE_NAME,
+  VERSIONS_FOLDER_NAME,
+  VERSIONS_SOURCE_FOLDER_NAME,
 } = require('./src/constants');
 const CLI_VERSION = require('./package.json').version;
 
@@ -39,6 +46,50 @@ function printHeader() {
 function handleError(error) {
   logger.error(error.message);
   process.exitCode = 1;
+}
+
+/**
+ * Copies the previously built versions as specified in the version data to the site output path.
+ * Also copies the version data file.
+ */
+async function copyPreviousVersions(rootFolder, siteOutputPath) {
+  const versionsJsonSourcePath = path.join(rootFolder, VERSIONS_DATA_FILE_NAME);
+  if (!fs.existsSync(versionsJsonSourcePath)) {
+    return Promise.resolve();
+  }
+
+  const versionsJson = fs.readJsonSync(versionsJsonSourcePath);
+  const versionsJsonSiteOutputPath = path.join(siteOutputPath, VERSIONS_DATA_FILE_NAME);
+  fs.outputJsonSync(versionsJsonSiteOutputPath, versionsJson);
+
+  const versionsOutputFolder = path.join(rootFolder, VERSIONS_SOURCE_FOLDER_NAME, 'output');
+  const versionsOutputPath = path.join(siteOutputPath, VERSIONS_FOLDER_NAME);
+
+  const copyVersions = Object.keys(versionsJson.versions).map((version) => {
+    const versionSourcePath = path.join(versionsOutputFolder, version);
+    return fs.existsAsync(versionSourcePath)
+      .then(exists => (exists
+        ? fs.copyAsync(versionSourcePath, path.join(versionsOutputPath, version))
+        : Promise.resolve()));
+  });
+
+  return Promise.all(copyVersions);
+}
+
+function createVersionsJsonIfNeeded(rootFolder, currentBaseUrl) {
+  const versionsJsonPath = path.join(rootFolder, VERSIONS_DATA_FILE_NAME);
+  const exists = fs.existsSync(versionsJsonPath);
+
+  if (!exists) {
+    const versionsJson = {
+      current: {
+        baseUrl: currentBaseUrl,
+      },
+      versions: {},
+    };
+    logger.info(`No existing ${VERSIONS_DATA_FILE_NAME} found, creating a new one.`);
+    fs.outputJsonSync(versionsJsonPath, versionsJson);
+  }
 }
 
 // We want to customize the help message to print MarkBind's header,
@@ -66,7 +117,7 @@ program
   .description('init a markbind website project')
   .action((root, options) => {
     const rootFolder = path.resolve(root || process.cwd());
-    const outputRoot = path.join(rootFolder, '_site');
+    const outputRoot = path.join(rootFolder, SITE_FOLDER_NAME);
     printHeader();
     if (options.convert) {
       if (fs.existsSync(path.resolve(rootFolder, 'site.json'))) {
@@ -115,7 +166,7 @@ program
       handleError(err);
     }
     const logsFolder = path.join(rootFolder, '_markbind/logs');
-    const outputFolder = path.join(rootFolder, '_site');
+    const outputFolder = path.join(rootFolder, SITE_FOLDER_NAME);
 
     let onePagePath = options.onePage === true ? INDEX_MARKDOWN_FILE : options.onePage;
     onePagePath = onePagePath ? ensurePosix(onePagePath) : onePagePath;
@@ -219,6 +270,7 @@ program
 
         return site.generate();
       })
+      .then(() => copyPreviousVersions(rootFolder, outputFolder))
       .then(() => {
         const watcher = chokidar.watch(rootFolder, {
           ignored: [
@@ -256,22 +308,212 @@ program
   .description('build a website')
   .action((userSpecifiedRoot, output, options) => {
     // if --baseUrl contains no arguments (options.baseUrl === true) then set baseUrl to empty string
-    const baseUrl = _.isBoolean(options.baseUrl) ? '' : options.baseUrl;
+    const optionBaseUrl = _.isBoolean(options.baseUrl) ? '' : options.baseUrl;
     let rootFolder;
     try {
       rootFolder = cliUtil.findRootFolder(userSpecifiedRoot, options.siteConfig);
     } catch (err) {
       handleError(err);
     }
-    const defaultOutputRoot = path.join(rootFolder, '_site');
+    const defaultOutputRoot = path.join(rootFolder, SITE_FOLDER_NAME);
     const outputFolder = output ? path.resolve(process.cwd(), output) : defaultOutputRoot;
     printHeader();
     new Site(rootFolder, outputFolder, undefined, undefined, options.siteConfig)
-      .generate(baseUrl)
+      .generate(optionBaseUrl)
+      .then(() => copyPreviousVersions(rootFolder, outputFolder))
       .then(() => {
         logger.info('Build success!');
       })
       .catch(handleError);
+  });
+
+program
+  .command('archive <version> [root] [output]')
+  .alias('a')
+  .option('--baseUrl [baseUrl]',
+          'optional flag which overrides baseUrl in site.json, leave argument empty for empty baseUrl')
+  .option('-s, --site-config <file>', 'specify the site config file (default: site.json)')
+  .option('-r --remove-source', 'keeps the source files (default: false)')
+  .description('archives the website into the versions subdirectory')
+  .action(async (version, userSpecifiedRoot, output, options) => {
+    let rootFolder;
+    try {
+      rootFolder = cliUtil.findRootFolder(userSpecifiedRoot, options.siteConfig);
+    } catch (err) {
+      handleError(err);
+    }
+
+    const versionOutputFolder = path.join(rootFolder, VERSIONS_SOURCE_FOLDER_NAME, 'output', version);
+    const siteOutputFolder = output
+      ? path.resolve(process.cwd(), output)
+      : path.join(rootFolder, SITE_FOLDER_NAME);
+
+    // if --baseUrl contains no arguments (options.baseUrl === true) then set baseUrl to empty string
+    const optionBaseUrl = options.baseUrl === true ? '' : options.baseUrl;
+    const {
+      baseUrl: siteConfigBaseUrl,
+    } = fs.readJsonSync(path.join(rootFolder, options.siteConfig || SITE_CONFIG_NAME));
+
+    const currentBaseUrl = optionBaseUrl || siteConfigBaseUrl || '/';
+    const versionBaseUrl = path.posix.join(currentBaseUrl, VERSIONS_FOLDER_NAME, version);
+
+    printHeader();
+
+    fs.emptydirSync(versionOutputFolder);
+    const site = new Site(rootFolder, versionOutputFolder, undefined, undefined, options.siteConfig);
+    await site.generate(versionBaseUrl, currentBaseUrl === '/' ? '' : currentBaseUrl);
+
+    createVersionsJsonIfNeeded(rootFolder, currentBaseUrl);
+    const versionsJsonSourcePath = path.join(rootFolder, VERSIONS_DATA_FILE_NAME);
+
+    // Update version data
+    const versionsJson = fs.readJsonSync(versionsJsonSourcePath);
+    versionsJson.versions[version] = {
+      baseUrl: versionBaseUrl,
+      keepSource: false,
+    };
+
+    // Copy the source
+    let copySources = Promise.resolve();
+    if (!options.removeSource) {
+      const ignoreConfig = [
+        VERSIONS_SOURCE_FOLDER_NAME,
+        VERSIONS_DATA_FILE_NAME,
+        path.relative(rootFolder, siteOutputFolder),
+      ];
+      const fileIgnore = ignore().add(ignoreConfig);
+      const fileRelativePaths = walkSync(rootFolder, { directories: false });
+      const filteredRelativePaths = fileIgnore.filter(fileRelativePaths);
+      const versionSourceOutputFolder = path.join(rootFolder, VERSIONS_SOURCE_FOLDER_NAME, 'source', version);
+      copySources = filteredRelativePaths.map(filePath => fs.copyAsync(
+        path.join(rootFolder, filePath),
+        path.join(versionSourceOutputFolder, filePath)));
+      copySources = Promise.all(copySources);
+      versionsJson.versions[version].keepSource = true;
+    }
+
+    fs.outputJsonSync(versionsJsonSourcePath, versionsJson);
+
+    // Copy the site that was just built to the output folder as well
+    fs.emptydirSync(siteOutputFolder);
+    fs.copySync(versionOutputFolder, siteOutputFolder);
+
+    // Copy previous versions, including the one just archived, and the updated version data.
+    await copyPreviousVersions(rootFolder, siteOutputFolder);
+    await copySources;
+
+    logger.info(`Archived ${version}. Remember to read the docs if you want to change the baseUrl!`);
+  });
+
+program
+  .command('rebuild-archive [root] [output]')
+  .alias('r')
+  .option('--baseUrl [baseUrl]',
+          'optional flag which overrides baseUrl in site.json, leave argument empty for empty baseUrl')
+  .option('-s, --site-config <file>', 'specify the site config file (default: site.json)')
+  .option('-b, --build', 'builds the current site as well (default: false)')
+  .description('re-archives all versions of the website which\'s source files were kept before'
+              + 'into the versions subdirectory again. Useful for changing baseUrl.')
+  .action(async (userSpecifiedRoot, output, options) => {
+    let rootFolder;
+    try {
+      rootFolder = cliUtil.findRootFolder(userSpecifiedRoot, options.siteConfig);
+    } catch (err) {
+      handleError(err);
+    }
+
+    const versionsJsonSourcePath = path.join(rootFolder, VERSIONS_DATA_FILE_NAME);
+    if (!fs.existsSync(versionsJsonSourcePath)) {
+      logger.warn(`No ${VERSIONS_DATA_FILE_NAME} found, exiting.`);
+      process.exit();
+    }
+    const versionsJson = fs.readJsonSync(versionsJsonSourcePath);
+
+    const versionsSourceFolder = path.join(rootFolder, VERSIONS_SOURCE_FOLDER_NAME, 'source');
+    const versionsOutputFolder = path.join(rootFolder, VERSIONS_SOURCE_FOLDER_NAME, 'output');
+
+    // if --baseUrl contains no arguments (options.baseUrl === true) then set baseUrl to empty string
+    const optionBaseUrl = _.isBoolean(options.baseUrl) ? '' : options.baseUrl;
+    const siteConfigBaseUrl = fs.readJsonSync(
+      path.join(rootFolder, options.siteConfig || SITE_CONFIG_NAME)).baseUrl;
+    const currentBaseUrl = optionBaseUrl || siteConfigBaseUrl || '/';
+
+    const versionsWithSourceFiles = Object.keys(versionsJson.versions).filter((version) => {
+      if (versionsJson[version].keepSource) {
+        return true;
+      }
+      logger.warn(`Skipping ${version} as its source files weren't kept...`);
+      return false;
+    });
+
+    logger.info('Rebuilding versions with source files... this may take quite a while');
+    for (let i = 0; i < versionsWithSourceFiles.length; i += 1) {
+      const version = versionsWithSourceFiles[i];
+      const versionBaseUrl = path.posix.join(currentBaseUrl, VERSIONS_FOLDER_NAME, version);
+      versionsJson.versions[version].baseUrl = versionBaseUrl;
+      const versionRoot = path.join(versionsSourceFolder, version);
+      const versionOutput = path.join(versionsOutputFolder, version);
+
+      fs.emptydirSync(versionOutput);
+      const site = new Site(versionRoot, versionOutput, undefined, undefined, options.siteConfig);
+      // Limit to generating one site at a time to avoid overwhelming the system
+      // eslint-disable-next-line no-await-in-loop
+      await site.generate(versionBaseUrl, currentBaseUrl === '/' ? '' : currentBaseUrl);
+      logger.info(`${version} rebuilt!`);
+    }
+
+    // Update version data
+    versionsJson.current.baseUrl = currentBaseUrl;
+    fs.outputJsonSync(versionsJsonSourcePath, versionsJson);
+
+    if (options.build) {
+      const outputFolder = output
+        ? path.resolve(process.cwd(), output)
+        : path.join(rootFolder, SITE_FOLDER_NAME);
+      printHeader();
+      const site = new Site(rootFolder, outputFolder, undefined, undefined, options.siteConfig);
+      await site.generate(optionBaseUrl);
+
+      await copyPreviousVersions(rootFolder, outputFolder);
+      logger.info('Main site rebuilt!');
+    }
+
+    logger.info('Rebuilt all archives with source files!');
+  });
+
+program
+  .command('remove-archive [version] [root]')
+  .description('Removes a version')
+  .option('--all-versions', 'warning: removes all versions (default: false)')
+  .option('-s, --site-config <file>', 'specify the site config file (default: site.json)')
+  .action(async (version, userSpecifiedRoot, options) => {
+    let rootFolder;
+    try {
+      rootFolder = cliUtil.findRootFolder(userSpecifiedRoot, options.siteConfig);
+    } catch (err) {
+      handleError(err);
+    }
+
+    const versionsJsonSourcePath = path.join(rootFolder, VERSIONS_DATA_FILE_NAME);
+    if (!fs.existsSync(versionsJsonSourcePath)) {
+      logger.warn(`No ${VERSIONS_DATA_FILE_NAME} found, exiting.`);
+      process.exit();
+    }
+
+    const versionsSourceFolder = path.join(rootFolder, VERSIONS_SOURCE_FOLDER_NAME, 'source');
+    const versionsOutputFolder = path.join(rootFolder, VERSIONS_SOURCE_FOLDER_NAME, 'output');
+    if (options.allVersions) {
+      await fs.removeAsync(versionsJsonSourcePath);
+      fs.emptydirSync(versionsSourceFolder);
+      fs.emptydirSync(versionsOutputFolder);
+      process.exit();
+    }
+
+    const versionsJson = fs.readJsonSync(versionsJsonSourcePath);
+    versionsJson[version] = undefined;
+
+    await fs.removeAsync(path.join(versionsSourceFolder, version));
+    await fs.removeAsync(path.join(versionsOutputFolder, version));
   });
 
 program
@@ -282,7 +524,7 @@ program
   .option('-s, --site-config <file>', 'specify the site config file (default: site.json)')
   .action((options) => {
     const rootFolder = path.resolve(process.cwd());
-    const outputRoot = path.join(rootFolder, '_site');
+    const outputRoot = path.join(rootFolder, SITE_FOLDER_NAME);
     new Site(rootFolder, outputRoot, undefined, undefined, options.siteConfig).deploy(options.travis)
       .then(() => {
         logger.info('Deployed!');

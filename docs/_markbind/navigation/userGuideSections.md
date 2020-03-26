@@ -14,6 +14,7 @@
   * [Tweaking the Page Structure]({{baseUrl}}/userGuide/tweakingThePageStructure.html)
   * [Reusing Contents]({{baseUrl}}/userGuide/reusingContents.html)
   * [Making the Site Searchable]({{baseUrl}}/userGuide/makingTheSiteSearchable.html)
+* [Versioning]({{baseUrl}}/userGuide/versioning.html)
 * [Deploying the Site]({{baseUrl}}/userGuide/deployingTheSite.html)
 * [MarkBind in the Project Workflow]({{baseUrl}}/userGuide/markBindInTheProjectWorkflow.html)
 * [Themes]({{baseUrl}}/userGuide/themes.html)

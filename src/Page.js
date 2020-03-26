@@ -58,6 +58,7 @@ class Page {
   constructor(pageConfig) {
     this.asset = pageConfig.asset;
     this.baseUrl = pageConfig.baseUrl;
+    this.currentVersionBaseUrl = pageConfig.currentVersionBaseUrl;
     this.baseUrlMap = pageConfig.baseUrlMap;
     this.content = pageConfig.content || '';
     this.faviconUrl = pageConfig.faviconUrl;
@@ -110,6 +111,7 @@ class Page {
     return {
       asset,
       baseUrl: this.baseUrl,
+      currentVersionBaseUrl: this.currentVersionBaseUrl,
       content: this.content,
       faviconUrl: this.faviconUrl,
       footerHtml: this.pageSectionsHtml.footer || '',

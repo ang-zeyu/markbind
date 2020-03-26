@@ -1,6 +1,6 @@
 module.exports = {
   // index.js
-  ACCEPTED_COMMANDS: ['init', 'build', 'serve', 'deploy'],
+  ACCEPTED_COMMANDS: ['init', 'build', 'serve', 'deploy', 'archive', 'rebuild-archive', 'remove-archive'],
   ACCEPTED_COMMANDS_ALIAS: ['i', 'b', 's', 'd'],
 
   // src/Page.js
@@ -60,6 +60,9 @@ module.exports = {
   LAZY_LOADING_BUILD_TIME_RECOMMENDATION_LIMIT: 30000,
   LAZY_LOADING_REBUILD_TIME_RECOMMENDATION_LIMIT: 5000,
   USER_VARIABLES_PATH: '_markbind/variables.md',
+  VERSIONS_DATA_FILE_NAME: 'versionsData.json',
+  VERSIONS_FOLDER_NAME: 'versions',
+  VERSIONS_SOURCE_FOLDER_NAME: '_versions',
   WIKI_SITE_NAV_PATH: '_Sidebar.md',
   WIKI_FOOTER_PATH: '_Footer.md',
   MARKBIND_WEBSITE_URL: 'https://markbind.org/',

@@ -63,6 +63,8 @@ const {
   TEMP_FOLDER_NAME,
   TEMPLATE_SITE_ASSET_FOLDER_NAME,
   USER_VARIABLES_PATH,
+  VERSIONS_DATA_FILE_NAME,
+  VERSIONS_SOURCE_FOLDER_NAME,
   WIKI_SITE_NAV_PATH,
   WIKI_FOOTER_PATH,
 } = require('./constants');
@@ -126,6 +128,7 @@ class Site {
 
     // Other properties
     this.addressablePages = [];
+    this.assetIgnore = ignore();
     this.baseUrlMap = new Set();
     this.forceReload = forceReload;
     this.plugins = {};
@@ -196,14 +199,23 @@ class Site {
     return false;
   }
 
-  readSiteConfig(baseUrl) {
+  readSiteConfig(baseUrl, currentVersionBaseUrl) {
     return new Promise((resolve, reject) => {
       const siteConfigPath = path.join(this.rootPath, this.siteConfigPath);
       fs.readJsonAsync(siteConfigPath)
         .then((config) => {
           this.siteConfig = config;
+          this.currentVersionBaseUrl = (currentVersionBaseUrl === undefined)
+            ? this.siteConfig.baseUrl
+            : currentVersionBaseUrl;
           this.siteConfig.baseUrl = (baseUrl === undefined) ? this.siteConfig.baseUrl : baseUrl;
           this.siteConfig.enableSearch = (config.enableSearch === undefined) || config.enableSearch;
+          this.assetIgnore = ignore().add([
+            ...(this.siteConfig.ignore || []),
+            VERSIONS_SOURCE_FOLDER_NAME,
+            VERSIONS_DATA_FILE_NAME,
+            path.relative(this.rootPath, this.outputPath),
+          ]);
           resolve(this.siteConfig);
         })
         .catch((err) => {
@@ -213,12 +225,12 @@ class Site {
     });
   }
 
-  listAssets(fileIgnore) {
+  listAssets() {
     return new Promise((resolve, reject) => {
       let files;
       try {
         files = walkSync(this.rootPath, { directories: false });
-        resolve(fileIgnore.filter(files));
+        resolve(this.assetIgnore.filter(files));
       } catch (error) {
         reject(error);
       }
@@ -230,6 +242,7 @@ class Site {
     const resultPath = path.join(this.outputPath, Site.setExtension(config.pageSrc, '.html'));
     return new Page({
       baseUrl: this.siteConfig.baseUrl,
+      currentVersionBaseUrl: this.currentVersionBaseUrl,
       baseUrlMap: this.baseUrlMap,
       content: '',
       pluginsContext: this.siteConfig.pluginsContext || {},
@@ -456,7 +469,7 @@ class Site {
       globPages.concat(walkSync(this.rootPath, {
         directories: false,
         globs: [addressableGlob.glob],
-        ignore: [CONFIG_FOLDER_NAME, SITE_FOLDER_NAME],
+        ignore: [CONFIG_FOLDER_NAME, SITE_FOLDER_NAME, VERSIONS_SOURCE_FOLDER_NAME],
       }).map(globPath => ({
         src: globPath,
         searchable: addressableGlob.searchable,
@@ -479,12 +492,13 @@ class Site {
   }
 
   collectBaseUrl() {
-    const candidates
-      = walkSync(this.rootPath, { directories: false })
-        .filter(x => x.endsWith(this.siteConfigPath))
-        .map(x => path.resolve(this.rootPath, x));
+    const candidates = walkSync(this.rootPath, {
+      directories: false,
+      globs: [`**/${this.siteConfigPath}`],
+      ignore: [VERSIONS_SOURCE_FOLDER_NAME],
+    }).map(x => path.dirname(path.resolve(this.rootPath, x)));
 
-    this.baseUrlMap = new Set(candidates.map(candidate => path.dirname(candidate)));
+    this.baseUrlMap = new Set(candidates);
 
     return Promise.resolve();
   }
@@ -540,7 +554,7 @@ class Site {
     return false;
   }
 
-  generate(baseUrl) {
+  generate(baseUrl, currentVersionBaseUrl = baseUrl) {
     const startTime = new Date();
     // Create the .tmp folder for storing intermediate results.
     fs.emptydirSync(this.tempPath);
@@ -550,7 +564,7 @@ class Site {
     logger.info(`Website generation ${lazyWebsiteGenerationString}started at ${
       startTime.toLocaleTimeString()}`);
     return new Promise((resolve, reject) => {
-      this.readSiteConfig(baseUrl)
+      this.readSiteConfig(baseUrl, currentVersionBaseUrl)
         .then(() => this.collectAddressablePages())
         .then(() => this.collectBaseUrl())
         .then(() => this.collectUserDefinedVariablesMap())
@@ -730,10 +744,8 @@ class Site {
   _buildMultipleAssets(filePaths) {
     const filePathArray = Array.isArray(filePaths) ? filePaths : [filePaths];
     const uniquePaths = _.uniq(filePathArray);
-    const ignoreConfig = this.siteConfig.ignore || [];
-    const fileIgnore = ignore().add(ignoreConfig);
     const fileRelativePaths = uniquePaths.map(filePath => path.relative(this.rootPath, filePath));
-    const copyAssets = fileIgnore.filter(fileRelativePaths)
+    const copyAssets = this.assetIgnore.filter(fileRelativePaths)
       .map(asset => fs.copyAsync(path.join(this.rootPath, asset), path.join(this.outputPath, asset)));
     return Promise.all(copyAssets)
       .then(() => logger.info('Assets built'));
@@ -753,12 +765,8 @@ class Site {
   buildAssets() {
     logger.info('Building assets...');
     return new Promise((resolve, reject) => {
-      const ignoreConfig = this.siteConfig.ignore || [];
-      const outputFolder = path.relative(this.rootPath, this.outputPath);
-      ignoreConfig.push(outputFolder); // ignore generated site folder
-      const fileIgnore = ignore().add(ignoreConfig);
       // Scan and copy assets (excluding ignore files).
-      this.listAssets(fileIgnore)
+      this.listAssets()
         .then(assets =>
           assets.map(asset =>
             fs.copyAsync(path.join(this.rootPath, asset), path.join(this.outputPath, asset))),
@@ -1060,6 +1068,25 @@ class Site {
   }
 
   /**
+   * Writes the site data to a file
+   */
+  writeSiteData() {
+    const siteDataPath = path.join(this.outputPath, SITE_DATA_NAME);
+    const siteData = {
+      enableSearch: this.siteConfig.enableSearch,
+      pages: this.pages.filter(page => page.searchable)
+        .map(page => ({
+          ...page.frontMatter,
+          headings: page.headings,
+          headingKeywords: page.keywords,
+        })),
+    };
+
+    fs.outputJsonSync(siteDataPath, siteData);
+    logger.info('Site data built');
+  }
+
+  /**
    * Copies Font Awesome assets to the assets folder
    */
   copyFontAwesomeAsset() {
@@ -1127,31 +1154,6 @@ class Site {
       const copyAll = Promise.all(filteredFiles.map(file =>
         fs.copyAsync(path.join(siteLayoutPath, file), path.join(layoutsDestPath, file))));
       return copyAll.then(() => Promise.resolve());
-    });
-  }
-
-  /**
-   * Writes the site data to a file
-   */
-  writeSiteData() {
-    return new Promise((resolve, reject) => {
-      const siteDataPath = path.join(this.outputPath, SITE_DATA_NAME);
-      const siteData = {
-        enableSearch: this.siteConfig.enableSearch,
-        pages: this.pages.filter(page => page.searchable)
-          .map(page => ({
-            ...page.frontMatter,
-            headings: page.headings,
-            headingKeywords: page.keywords,
-          })),
-      };
-
-      fs.outputJsonAsync(siteDataPath, siteData)
-        .then(() => logger.info('Site data built'))
-        .then(resolve)
-        .catch((error) => {
-          Site.rejectHandler(reject, error, [this.tempPath, this.outputPath]);
-        });
     });
   }
 
