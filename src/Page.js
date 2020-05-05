@@ -311,71 +311,43 @@ class Page {
   }
 
   /**
-   * Generates element selector for page navigation, depending on specifier in front matter
-   * @param pageNav {string|number} 'default' refers to the configured heading indexing level,
-   * otherwise a number that indicates the indexing level.
-   */
-  generateElementSelectorForPageNav(pageNav) {
-    if (pageNav === 'default') {
-      // Use specified navigation level or default in this.headingIndexingLevel
-      return `${Page.generateHeadingSelector(this.headingIndexingLevel)}, panel`;
-    } else if (Number.isInteger(pageNav)) {
-      return `${Page.generateHeadingSelector(parseInt(pageNav, 10))}, panel`;
-    }
-    // Not a valid specifier
-    return undefined;
-  }
-
-  /**
    * Collect headings outside of models and unexpanded panels.
    * Collects headings from the header slots of unexpanded panels, but not its content.
    * @param content html content of a page
    */
   collectNavigableHeadings(content) {
     const { pageNav } = this.frontMatter;
-    const elementSelector = this.generateElementSelectorForPageNav(pageNav);
-    if (elementSelector === undefined) {
+
+    let headingsSelector;
+    if (pageNav === 'default') {
+      headingsSelector = Page.generateHeadingSelector(this.headingIndexingLevel);
+    } else if (Number.isInteger(pageNav)) {
+      headingsSelector = Page.generateHeadingSelector(parseInt(pageNav, 10));
+    } else {
+      // invalid page nav value
       return;
     }
+
     const $ = cheerio.load(content);
     $('b-modal').remove();
-    this._collectNavigableHeadings($, $.root()[0], elementSelector);
-  }
-
-
-  _collectNavigableHeadings($, context, pageNavSelector) {
-    $(pageNavSelector, context).each((i, elem) => {
-      // Check if heading or panel is already inside an unexpanded panel
-      let isInsideUnexpandedPanel = false;
-      const panelParents = $(elem).parentsUntil(context).filter('panel').not(elem);
-      panelParents.each((j, elemParent) => {
-        if (elemParent.attribs.expanded === undefined) {
-          isInsideUnexpandedPanel = true;
-          return false;
-        }
-        return true;
-      });
-      if (isInsideUnexpandedPanel) {
-        return;
-      }
-
-      // Check if heading / panel is under a panel's header slots, which is handled specially below.
-      const slotParents = $(elem).parentsUntil(context).filter('[slot="header"], [slot="_header"]').not(elem);
-      const panelSlotParents = slotParents.parent('panel');
+    $('panel').not('[expanded]').each((i, elem) =>
+      $(elem).children().not('[slot="header"], [slot="_header"]').remove());
+    $('panel[minimized]').remove();
+    $(headingsSelector).each((i, elem) => {
+      const slotParent = $(elem).closest('[slot="_header"]');
+      const panelSlotParents = slotParent.parent('panel');
       if (panelSlotParents.length) {
-        return;
+        const panelUserSpecifiedHeaderSlot = panelSlotParents.children('[slot="header"]');
+        if (panelUserSpecifiedHeaderSlot.length) {
+          // do not index this heading which is under the markbind generated _header slot,
+          // since the user specified slot has priority
+          return;
+        }
       }
 
-      if (elem.name === 'panel') {
-        // Recurse only on the slot which has priority
-        let headings = $(elem).children('[slot="header"]');
-        headings = headings.length ? headings : $(elem).children('[slot="_header"]');
-        if (!headings.length) return;
-
-        this._collectNavigableHeadings($, headings.first(), pageNavSelector);
-      } else if ($(elem).attr('id') !== undefined) {
+      if (elem.attribs.id) {
         // Headings already in content, with a valid ID
-        this.navigableHeadings[$(elem).attr('id')] = {
+        this.navigableHeadings[elem.attribs.id] = {
           text: $(elem).text(),
           level: elem.name.replace('h', ''),
         };
