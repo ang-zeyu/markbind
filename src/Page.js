@@ -999,9 +999,11 @@ class Page {
       headingIndexingLevel: this.headingIndexingLevel,
       enableSearch: this.enableSearch,
       searchable: this.searchable,
+      includedFiles: this.includedFiles,
+      isDynamic: false,
+      src: utils.ensurePosix(FsUtil.setExtension(this.src, '.html')),
       rootPath: this.rootPath,
       sourcePath: this.sourcePath,
-      includedFiles: this.includedFiles,
       resultPath: this.resultPath,
       ...override,
     };
@@ -1230,6 +1232,7 @@ class Page {
       builtFiles.add(resultPath);
 
       const pluginConfig = this.getPluginConfig({
+        isDynamic: true,
         sourcePath: dependency.asIfTo,
         resultPath,
       });

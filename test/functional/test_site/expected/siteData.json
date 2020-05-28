@@ -170,6 +170,24 @@
       "headingKeywords": {}
     },
     {
+      "src": "testDisqus.md",
+      "title": "Disqus test",
+      "layout": "default",
+      "globalOverrideProperty": "Overridden by global override",
+      "globalAndFrontMatterOverrideProperty": "Overridden by global override",
+      "headings": {},
+      "headingKeywords": {}
+    },
+    {
+      "src": "testDisqusPanel.md",
+      "title": "Disqus test",
+      "layout": "default",
+      "globalOverrideProperty": "Overridden by global override",
+      "globalAndFrontMatterOverrideProperty": "Overridden by global override",
+      "headings": {},
+      "headingKeywords": {}
+    },
+    {
       "title": "Hello World",
       "head": "overwriteLayoutHead.md",
       "layout": "testLayout",

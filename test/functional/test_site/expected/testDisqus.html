@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="default-head-top">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="MarkBind 2.14.1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Disqus test</title>
+  <link rel="stylesheet" href="markbind/css/bootstrap.min.css">
+  <link rel="stylesheet" href="markbind/css/bootstrap-vue.min.css">
+  <link rel="stylesheet" href="markbind/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+  <link rel="stylesheet" href="markbind/css/octicons.css">
+  <link rel="stylesheet" href="markbind/css/github.min.css">
+  <link rel="stylesheet" href="markbind/css/markbind.css">
+  <link rel="stylesheet" href="/test_site/plugins/testMarkbindPlugin/testMarkbindPluginStylesheet.css">
+  <link rel="stylesheet" href="/test_site/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
+  <link rel="stylesheet" href="markbind/layouts/default/styles.css">
+  <meta name="default-head-bottom">
+  <link rel="icon" href="/test_site/favicon.png">
+</head>
+
+<body>
+  <div id="app">
+    <div id="flex-body">
+      <div id="content-wrapper">
+        <p>
+          <div id="disqus_thread" style="min-height: 100px"></div>
+          <script>
+            var disqus_config = function() {
+              this.page.identifier = 'testDisqus.html';
+            };
+            var disqus_loaded = false;
+            var disqus_observer = new IntersectionObserver(function(entries, o) {
+              if (disqus_loaded) {
+                o.unobserve(document.getElementById('disqus_thread'));
+              }
+              if ((entries.find(e => e.isIntersecting)) && !disqus_loaded) {
+                disqus_loaded = true;
+                var d = document,
+                  s = d.createElement('script');
+                s.src = 'TEST_LINK';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+              }
+            }, {
+              rootMargin: '300px'
+            });
+            window.addEventListener('load', () => disqus_observer.observe(document.getElementById('disqus_thread')));
+          </script>
+        </p>
+      </div>
+
+
+    </div>
+    <footer>
+      <div class="text-center">
+        Default footer
+      </div>
+    </footer>
+  </div>
+</body>
+<script src="markbind/js/vue.min.js"></script>
+<script src="markbind/js/vue-strap.min.js"></script>
+<script src="markbind/js/bootstrap-utility.min.js"></script>
+<script src="markbind/js/polyfill.min.js"></script>
+<script src="markbind/js/bootstrap-vue.min.js"></script>
+<script>
+  const baseUrl = '/test_site'
+  const enableSearch = true
+</script>
+<script src="markbind/js/setup.js"></script>
+<script src="/test_site/plugins/testMarkbindPlugin/testMarkbindPluginScript.js"></script>
+<script>
+  alert("Inline plugin script loaded!")
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=TRACKING-ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'TRACKING-ID');
+</script>
+<script src="markbind/layouts/default/scripts.js"></script>
+
+</html>

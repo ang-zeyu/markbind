@@ -30,6 +30,14 @@
       ]
     },
     {
+      "src": "testDisqus.md",
+      "title": "Disqus test"
+    },
+    {
+      "src": "testDisqusPanel.md",
+      "title": "Disqus test"
+    },
+    {
       "src": "testLayouts.md",
       "title": "Hello World"
     },
@@ -107,7 +115,8 @@
   "plugins": [
     "testMarkbindPlugin",
     "filterTags",
-    "googleAnalytics"
+    "googleAnalytics",
+    "disqus"
   ],
   "pluginsContext": {
     "testMarkbindPlugin": {
@@ -119,6 +128,9 @@
     },
     "googleAnalytics": {
       "trackingID": "TRACKING-ID"
+    },
+    "disqus": {
+      "embedLink": "TEST_LINK"
     }
   }
 }
