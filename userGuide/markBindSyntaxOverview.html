@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="MarkBind 2.15.2">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MarkBind - User Guide: MarkBind Syntax Overview </title>
+  <link rel="stylesheet" href="../markbind/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../markbind/css/bootstrap-vue.min.css">
+  <link rel="stylesheet" href="../markbind/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+  <link rel="stylesheet" href="../markbind/css/octicons.css">
+  <link rel="stylesheet" href="../markbind/css/github.min.css">
+  <link rel="stylesheet" href="../markbind/css/markbind.min.css">
+  <script src="../markbind/js/polyfill.min.js"></script>
+  <script src="../markbind/js/vue.min.js"></script>
+  <script src="../markbind/js/markbind.min.js"></script>
+  <script src="../markbind/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
+  <link rel="stylesheet" href="../markbind/layouts/userGuide/styles.css">
+  <link rel="icon" href="/favicon.ico">
+</head>
+
+<body>
+  <div id="app">
+    <header fixed>
+      <link rel="stylesheet" href="/css/main.css">
+      <navbar type="dark" class="temp-navbar">
+        <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
+        <li><a href="/index.html" class="nav-link">HOME</a></li>
+        <div tags="environment--ug">
+          <li><a href="/userGuide/index.html" class="nav-link">USER GUIDE</a></li>
+        </div>
+
+        <li><a href="/showcase.html" class="nav-link">SHOWCASE</a></li>
+        <li><a href="/about.html" class="nav-link">ABOUT</a></li>
+        <li>
+          <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
+        <li slot="right">
+          <form class="navbar-form">
+            <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right></searchbar>
+          </form>
+        </li>
+      </navbar>
+    </header>
+    <div id="flex-body">
+      <nav id="site-nav" class="navbar navbar-light bg-transparent">
+        <div class="border-right-grey nav-inner position-sticky slim-scroll">
+          <p><span style="font-weight: bolder; font-size: 1.25em;">User Guide</span></p>
+          <ul class="site-nav-list site-nav-list-root">
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/userGuide/gettingStarted.html"><strong>Getting Started</strong></a></div>
+            </li>
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>Authoring Contents</strong>
+                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
+              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/authoringContents.html">Overview</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/addingPages.html">Adding Pages</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindSyntaxOverview.html" class="current">MarkBind Syntax Overview</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/formattingContents.html">Formatting Contents</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingComponents.html">Using Components</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingHtmlJavaScriptCss.html">Using HTML, JavaScript, CSS</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tweakingThePageStructure.html">Tweaking the Page Structure</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/reusingContents.html">Reusing Contents</a></div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>Working with sites</strong>
+                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
+              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/workingWithSites.html">Overview</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/settingSiteProperties.html">Setting Site Properties</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingPlugins.html">Using Plugins</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/makingTheSiteSearchable.html">Making the Site Searchable</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/themes.html">Applying Themes</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/deployingTheSite.html">Deploying the Site</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindInTheProjectWorkflow.html">MarkBind in the Project Workflow</a></div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>References</strong>
+                <i class="site-nav-dropdown-btn-icon site-nav-rotate-icon" onclick="handleSiteNavClick(this.parentNode, false); event.stopPropagation();">
+                  <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
+              <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/cliCommands.html">CLI Commands</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/readerFacingFeatures.html">Reader-Facing Features</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/fullSyntaxReference.html">Full Syntax Reference</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/syntaxCheatSheet.html">Syntax Cheat Sheet</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code v-pre>site.json</code> File</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tipsAndTricks.html">Tips &amp; Tricks</a></div>
+                </li>
+                <li>
+                  <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/glossary.html">Glossary</a></div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div id="content-wrapper">
+        <div></div>
+        <div></div>
+        <span id="link" class="d-none">
+          [_User Guide → MarkBind Syntax Overview_](markBindSyntaxOverview.html)
+        </span>
+        <h1 id="markbind-syntax-overview">MarkBind Syntax Overview<span id="markbind-syntax-overview" class="anchor"></span><a class="fa fa-anchor" href="#markbind-syntax-overview" onclick="event.stopPropagation()"></a></h1>
+        <span class="lead" id="overview">
+          <p><strong>A MarkBind source file may contain a mix of several popular syntax schemes</strong> used in creating web pages. MarkBind source file can be as simple as basic Markdown, and you can use progressively more complicated syntax to create progressively more sophisticated Web pages while optimizing other aspects such as content reuse.
+          </p>
+        </span>
+        <p></p>
+        <p>Given below is an overview of the syntax schemes supported by MarkBind.</p>
+        <box>
+          <p><span aria-hidden="true" class="fas fa-info-circle"></span> Exact usage of various MarkBind syntax is described in separate sections such as <span><span><a href="/userGuide/formattingContents.html"><em>User Guide → Formatting Contents</em></a></span></span></p>
+        </box>
+        <p></p>
+        <h4 id="support-for-markdown"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Support for Markdown<span id="support-for-markdown" class="anchor"></span><a class="fa fa-anchor" href="#support-for-markdown" onclick="event.stopPropagation()"></a></h4>
+        <p>MarkBind supports all basic Markdown syntax.</p>
+        <panel type="seamless"><template slot="_header">
+            <p>Some examples ...</p>
+          </template>
+          <div>
+            <div>
+
+
+
+
+
+
+              <p><span class="dimmed">CODE:</span></p>
+              <div class="indented">
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-section">### Heading level 3</span><br></span><span>...<br></span><span><span class="hljs-section">###### Heading level 6</span><br></span></code></pre>
+              </div>
+              <p><span class="dimmed">OUTPUT:</span></p>
+              <div class="indented">
+                <box border-left-color="grey" background-color="white">
+                  <h3 id="heading-level-3">Heading level 3<span id="heading-level-3" class="anchor"></span><a class="fa fa-anchor" href="#heading-level-3" onclick="event.stopPropagation()"></a></h3>
+                  <p>...</p>
+                  <h6 id="heading-level-6">Heading level 6<span id="heading-level-6" class="anchor"></span><a class="fa fa-anchor" href="#heading-level-6" onclick="event.stopPropagation()"></a></h6>
+                </box>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+
+
+
+
+
+
+              <p><span class="dimmed">CODE:</span></p>
+              <div class="indented">
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-strong">**Bold**</span>, <span class="hljs-emphasis">_Italic_</span>, <span class="hljs-strong">___Bold and Italic__</span>_, <span class="hljs-code">`Inline Code`</span><br></span></code></pre>
+              </div>
+              <p><span class="dimmed">OUTPUT:</span></p>
+              <div class="indented">
+                <box border-left-color="grey" background-color="white">
+                  <p><strong>Bold</strong>, <em>Italic</em>, <em><strong>Bold and Italic</strong></em>, <code v-pre>Inline Code</code></p>
+                </box>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+
+
+
+
+
+
+              <p><span class="dimmed">CODE:</span></p>
+              <div class="indented">
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span>MarkBind home is at [<span class="hljs-string">here</span>](<span class="hljs-link">https://markbind.org</span>).<br></span></code></pre>
+              </div>
+              <p><span class="dimmed">OUTPUT:</span></p>
+              <div class="indented">
+                <box border-left-color="grey" background-color="white">
+                  <p>MarkBind home is at <a href="https://markbind.org">here</a>.</p>
+                </box>
+              </div>
+            </div>
+          </div>
+        </panel>
+
+        <h4 id="support-for-gfmd"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Support for GFMD<span id="support-for-gfmd" class="anchor"></span><a class="fa fa-anchor" href="#support-for-gfmd" onclick="event.stopPropagation()"></a></h4>
+        <p>MarkBind supports additional Markdown features provided by Github-Flavored Markdown (GFMD).</p>
+        <panel type="seamless"><template slot="_header">
+            <p>Some examples ...</p>
+          </template>
+          <div>
+            <div>
+
+
+
+
+
+
+              <p><span class="dimmed">CODE:</span></p>
+              <div class="indented">
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-code">```xml</span><br></span><span><span class="hljs-code">&lt;foo&gt;</span><br></span><span><span class="hljs-code">  &lt;bar type="name"&gt;goo&lt;/bar&gt;</span><br></span><span><span class="hljs-code">&lt;/foo&gt;</span><br></span><span><span class="hljs-code">```</span><br></span></code></pre>
+              </div>
+              <p><span class="dimmed">OUTPUT:</span></p>
+              <div class="indented">
+                <box border-left-color="grey" background-color="white">
+                  <pre><code class="hljs xml" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">foo</span>&gt;</span><br></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">bar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"name"</span>&gt;</span>goo<span class="hljs-tag">&lt;/<span class="hljs-name">bar</span>&gt;</span><br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">foo</span>&gt;</span><br></span></code></pre>
+                </box>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+
+
+
+
+
+
+              <p><span class="dimmed">CODE:</span></p>
+              <div class="indented">
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-bullet">- </span>[ ] Item 1<br></span><span><span class="hljs-bullet">   - </span>[ ] Sub item 1.1<br></span><span><span class="hljs-bullet">   - </span>[x] Sub item 1.2<br></span><span><span class="hljs-bullet">- </span>[x] Item 2<br></span><span><span class="hljs-bullet">- </span>[ ] Item 3<br></span></code></pre>
+              </div>
+              <p><span class="dimmed">OUTPUT:</span></p>
+              <div class="indented">
+                <box border-left-color="grey" background-color="white">
+                  <ul class="contains-task-list">
+                    <li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox"> Item 1
+                      <ul class="contains-task-list">
+                        <li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox"> Sub item 1.1</li>
+                        <li class="task-list-item enabled"><input class="task-list-item-checkbox" checked type="checkbox"> Sub item 1.2</li>
+                      </ul>
+                    </li>
+                    <li class="task-list-item enabled"><input class="task-list-item-checkbox" checked type="checkbox"> Item 2</li>
+                    <li class="task-list-item enabled"><input class="task-list-item-checkbox" type="checkbox"> Item 3</li>
+                  </ul>
+                </box>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+
+
+
+
+
+
+              <p><span class="dimmed">CODE:</span></p>
+              <div class="indented">
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span>:+1: :exclamation: :x: :construction:<br></span></code></pre>
+              </div>
+              <p><span class="dimmed">OUTPUT:</span></p>
+              <div class="indented">
+                <box border-left-color="grey" background-color="white">
+                  <p>👍 ❗️ ❌ 🚧</p>
+                </box>
+              </div>
+            </div>
+          </div>
+        </panel>
+
+        <h4 id="markbind-extensions-to-markdown"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> MarkBind Extensions to Markdown<span id="markbind-extensions-to-markdown" class="anchor"></span><a class="fa fa-anchor" href="#markbind-extensions-to-markdown" onclick="event.stopPropagation()"></a></h4>
+        <p>MarkBind adds several Markdown-like features on top of GFMD.</p>
+        <panel type="seamless"><template slot="_header">
+            <p>Some examples ...</p>
+          </template>
+          <div>
+            <div>
+
+
+
+
+
+
+              <p><span class="dimmed">CODE:</span></p>
+              <div class="indented">
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-strong">****Super Bold**</span>**, ++Underline++, ==Highlight==, %%Dim%%, Super^script^, Sub~script~<br></span></code></pre>
+              </div>
+              <p><span class="dimmed">OUTPUT:</span></p>
+              <div class="indented">
+                <box border-left-color="grey" background-color="white">
+                  <p><strong><strong>Super Bold</strong></strong>, <ins>Underline</ins>, <mark>Highlight</mark>, <span class="dimmed">Dim</span>, Super<sup>script</sup>, Sub<sub>script</sub></p>
+                </box>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+
+
+
+
+
+
+              <p><span class="dimmed">CODE:</span></p>
+              <div class="indented">
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-bullet">- </span>( ) Item 1<br></span><span><span class="hljs-bullet">- </span>( ) Item 2<br></span><span><span class="hljs-bullet">- </span>(x) Item 3<br></span></code></pre>
+              </div>
+              <p><span class="dimmed">OUTPUT:</span></p>
+              <div class="indented">
+                <box border-left-color="grey" background-color="white">
+                  <ul radio-group="e07c4" class="radio-list">
+                    <li class="radio-list-item"><label><input class="radio-list-input" name="e07c4" type="radio"> Item 1</label></li>
+                    <li class="radio-list-item"><label><input class="radio-list-input" name="e07c4" type="radio"> Item 2</label></li>
+                    <li class="radio-list-item"><label><input class="radio-list-input" checked name="e07c4" type="radio"> Item 3</label></li>
+                  </ul>
+                </box>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+
+
+
+
+
+
+              <p><span class="dimmed">CODE:</span></p>
+              <div class="indented">
+                <pre><code class="no-line-numbers hljs markdown" v-pre><span><span class="hljs-strong">**Normal footnotes:**</span><br></span><span>Here is a footnote reference,[^1] and another.[^longnote]<br></span><span><br></span><span>[<span class="hljs-symbol">^1</span>]: <span class="hljs-link">Here is the footnote. Footnotes will appear at the bottom of the page.</span><br></span><span><br></span><span>[<span class="hljs-symbol">^longnote</span>]: <span class="hljs-link">Here's one with multiple blocks.</span><br></span><span><br></span><span><span class="hljs-code">    Subsequent paragraphs are indented to show that they</span><br></span><span>belong to the previous footnote.<br></span><span><br></span><span><br></span><span><span class="hljs-strong">**Inline footnotes:**</span><br></span><span>Here is an inline note.^[Inlines notes are easier to write, since<br></span><span>you don't have to pick an identifier and move down to type the<br></span><span>note.]<br></span></code></pre>
+              </div>
+              <p><span class="dimmed">OUTPUT:</span></p>
+              <div class="indented">
+                <box border-left-color="grey" background-color="white">
+                  <p><strong>Normal footnotes:</strong>
+                    Here is a footnote reference,<span for="pop:footnote1" v-b-popover.hover.top.html="popoverGenerator" v-b-tooltip.hover.top.html="tooltipContentGetter" v-on:mouseover="$refs['pop:footnote1'].show()" class="trigger"><sup class="footnote-ref"><a aria-describedby="footnote-label" href="#fn1" id="fnref1">[1]</a></sup></span> and another.<span for="pop:footnote2" v-b-popover.hover.top.html="popoverGenerator" v-b-tooltip.hover.top.html="tooltipContentGetter" v-on:mouseover="$refs['pop:footnote2'].show()" class="trigger"><sup class="footnote-ref"><a aria-describedby="footnote-label" href="#fn2" id="fnref2">[2]</a></sup></span></p>
+                  <p><strong>Inline footnotes:</strong>
+                    Here is an inline note.<span for="pop:footnote3" v-b-popover.hover.top.html="popoverGenerator" v-b-tooltip.hover.top.html="tooltipContentGetter" v-on:mouseover="$refs['pop:footnote3'].show()" class="trigger"><sup class="footnote-ref"><a aria-describedby="footnote-label" href="#fn3" id="fnref3">[3]</a></sup></span></p>
+                </box>
+              </div>
+            </div>
+          </div>
+        </panel>
+
+        <h4 id="markbind-custom-syntax"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> MarkBind Custom Syntax<span id="markbind-custom-syntax" class="anchor"></span><a class="fa fa-anchor" href="#markbind-custom-syntax" onclick="event.stopPropagation()"></a></h4>
+        <p>Given below are some examples of custom syntax added by MarkBind.</p>
+        <blockquote>
+          <span>
+            <p><strong>MarkBind variables are ideal for reusing small bits of code</strong> in multiple places; you can define a variable to represent the code bit in question and reuse it anywhere in the site by referring the variable instead of duplicating the code bit.
+            </p>
+          </span>
+          <p></p>
+        </blockquote>
+        <div class="indented">
+          More info: <span><span><a href="/userGuide/reusingContents.html#variables"><em>User Guide → Reusing Contents → Variables</em></a></span></span></div>
+        <br>
+        <blockquote>
+          <span>
+            <p><strong>MarkBind has a powerful <code v-pre>&lt;include&gt;</code> mechanism</strong> which allows you to create documents by combining other content fragments.
+            </p>
+          </span>
+          <p></p>
+        </blockquote>
+        <div class="indented">
+          More info: <span><span><a href="/userGuide/reusingContents.html#includes"><em>User Guide → Reusing Contents → Includes</em></a></span></span></div>
+        <br>
+        <blockquote>
+          <span>
+            <p><strong>MarkBind provides a number of components</strong> (e.g., expandable panels, tabbed displays, navigation bars, etc.) that you can use to enhance the appearance/behavior of your pages.
+            </p>
+          </span>
+          <p></p>
+        </blockquote>
+        <div class="indented">
+          More info: <span><span><a href="/userGuide/usingComponents.html"><em>User Guide → Using Components</em></a></span></span></div>
+        <br>
+
+        <h4 id="support-for-html-javascript-css"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Support for HTML, JavaScript, CSS<span id="support-for-html-javascript-css" class="anchor"></span><a class="fa fa-anchor" href="#support-for-html-javascript-css" onclick="event.stopPropagation()"></a></h4>
+        <blockquote>
+          <span>
+            <p><strong>A MarkBind source file can contain a mixture of HTML, JavaScript, and CSS</strong> as a normal web page would.
+            </p>
+          </span>
+          <p></p>
+        </blockquote>
+        <div class="indented">
+          More info: <span><span><a href="/userGuide/usingHtmlJavaScriptCss.html"><em>User Guide → Using HTML, JavaScript, CSS</em></a></span></span></div>
+        <br>
+
+        <h4 id="markbind-vue-components-and-bootstrap"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> MarkBind Vue components and BootStrap<span id="markbind-vue-components-and-bootstrap" class="anchor"></span><a class="fa fa-anchor" href="#markbind-vue-components-and-bootstrap" onclick="event.stopPropagation()"></a></h4>
+        <p>MarkBind has several core Vue.js components built on the popular <a href="https://getbootstrap.com/docs/4.2/getting-started/introduction/">BootStrap</a> framework. Much of Bootstrap's features are supported in and out of these components as well.</p>
+
+        <h4 id="support-for-nunjucks"><span style="color: #00B0F0"><span aria-hidden="true" class="fas fa-check-circle"></span></span> Support for Nunjucks<span id="support-for-nunjucks" class="anchor"></span><a class="fa fa-anchor" href="#support-for-nunjucks" onclick="event.stopPropagation()"></a></h4>
+        <p><a href="https://mozilla.github.io/nunjucks/">Nunjucks</a> is a JavaScript based templating tool. Here is a simple example:</p>
+        <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br></span><span>{% for item in [1, 2, 3, 4] %}<br></span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Item {{ item }}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br></span><span>{% endfor %}<br></span><span><span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br></span></code></pre>
+        <p><span aria-hidden="true" class="fas fa-arrow-down"></span></p>
+        <box>
+          <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+          </ul>
+        </box>
+        <p>As MarkBind uses Nunjucks behind the scene, <strong>MarkBind is generally compatible with Nunjucks</strong>, which means you can use Nunjucks templating in your source files. Note that <mark>the code is processed for Nunjucks syntax before the rest of the MarkBind syntax are processed</mark>.</p>
+        <div class="clearfix">
+          <p><span class="float-left"><a class="btn btn-light" href="/userGuide/addingPages.html"><span><span aria-hidden="true" class="far fa-arrow-alt-circle-left"></span> <span>Adding Pages</span></span></a></span></p>
+          <p><span class="float-right"><a class="btn btn-light" href="/userGuide/formattingContents.html"><span><span>Formatting Contents</span> <span aria-hidden="true" class="far fa-arrow-alt-circle-right"></span></span></a></span></p>
+        </div>
+        <br>
+        <hr class="footnotes-sep">
+        <section class="footnotes">
+          <ol class="footnotes-list">
+            <li id="fn1" class="footnote-item">
+              <p>Here is the footnote. Footnotes will appear at the bottom of the page.</p>
+            </li>
+            <li id="fn2" class="footnote-item">
+              <p>Here's one with multiple blocks.</p>
+              <p>Subsequent paragraphs are indented to show that they
+                belong to the previous footnote.</p>
+            </li>
+            <li id="fn3" class="footnote-item">
+              <p>Inlines notes are easier to write, since
+                you don't have to pick an identifier and move down to type the
+                note.</p>
+            </li>
+          </ol>
+          <span id="pop:footnote1" data-mb-component-type="popover" v-b-popover.hover.top.html="popoverInnerGenerator" class="trigger">
+            <div data-mb-html-for="content">
+              <p>Here is the footnote. Footnotes will appear at the bottom of the page.</p>
+            </div>
+          </span>
+
+          <span id="pop:footnote2" data-mb-component-type="popover" v-b-popover.hover.top.html="popoverInnerGenerator" class="trigger">
+            <div data-mb-html-for="content">
+              <p>Here's one with multiple blocks.</p>
+              <p>Subsequent paragraphs are indented to show that they
+                belong to the previous footnote.</p>
+            </div>
+          </span>
+
+          <span id="pop:footnote3" data-mb-component-type="popover" v-b-popover.hover.top.html="popoverInnerGenerator" class="trigger">
+            <div data-mb-html-for="content">
+              <p>Inlines notes are easier to write, since
+                you don't have to pick an identifier and move down to type the
+                note.</p>
+            </div>
+          </span>
+        </section>
+      </div>
+
+
+
+
+    </div>
+    <footer>
+      <div class="text-center">
+        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.15.2</a> on Sat, Aug 22, 2020, 5:19:08 AM UTC]</small></div>
+    </footer>
+  </div>
+</body>
+<script src="../markbind/js/bootstrap-utility.min.js"></script>
+<script>
+  const baseUrl = ''
+  MarkBind.setupWithSearch()
+</script>
+<script src="../markbind/layouts/userGuide/scripts.js"></script>
+<script>
+  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+</script>
+
+</html>
