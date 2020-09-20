@@ -10,6 +10,94 @@
       "headingKeywords": {}
     },
     {
+      "src": "devGuide/design.md",
+      "title": "Design",
+      "headings": {
+        "design": "Design",
+        "project-structure": "Project structure",
+        "markbind-core-library": "MarkBind core library",
+        "markbind-cli": "MarkBind CLI",
+        "markbind-core-web-library": "MarkBind core-web library",
+        "ui-components-library": "UI components library"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "devGuide/devGuide.md",
+      "title": "Contributing",
+      "headings": {
+        "developer-guide": "Developer guide",
+        "contributing": "Contributing"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "devGuide/index.md",
+      "title": "",
+      "headings": {},
+      "headingKeywords": {}
+    },
+    {
+      "src": "devGuide/projectManagement.md",
+      "title": "Project management",
+      "headings": {
+        "project-management": "Project management",
+        "managing-prs": "Managing PRs",
+        "approval": "Approval",
+        "merging": "Merging",
+        "doing-a-release": "Doing a Release"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "devGuide/settingUp.md",
+      "title": "Setting up",
+      "headings": {
+        "setting-up": "Setting up",
+        "prerequisites": "Prerequisites",
+        "setting-up-the-dev-environment": "Setting up the dev environment"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "devGuide/styleGuides.md",
+      "title": "Appendix: Style guides",
+      "headings": {
+        "appendix-style-guides": "Appendix: Style guides"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "devGuide/workflow.md",
+      "title": "Workflow",
+      "headings": {
+        "workflow": "Workflow",
+        "writing-code": "Writing code",
+        "general-tips": "General tips",
+        "editing-frontend-features": "Editing frontend features",
+        "testing": "Testing",
+        "updating-and-writing-tests": "Updating and writing tests",
+        "adding-test-site-content": "Adding test site content",
+        "adding-snapshot-tests-for-components": "Adding snapshot tests for components",
+        "linting": "Linting",
+        "dependency-management": "Dependency management"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "devGuide/writingPlugins.md",
+      "title": "Writing Plugins",
+      "headings": {
+        "writing-plugins": "Writing Plugins",
+        "rendering": "Rendering",
+        "assets": "Assets",
+        "live-reload": "Live reload",
+        "special-tags": "Special tags",
+        "lifecycle-hooks": "Lifecycle hooks"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "showcase.md",
       "title": "Showcase",
       "headings": {
@@ -111,7 +199,8 @@
         "custom-formatting": "Custom formatting",
         "adding-days": "Adding days",
         "page-variables": "Page variables",
-        "advanced-formatting": "Advanced Formatting"
+        "advanced-formatting": "Advanced Formatting",
+        "math-formulae": "Math Formulae"
       },
       "headingKeywords": {}
     },
@@ -236,6 +325,7 @@
         "titleprefix": "titlePrefix",
         "theme": "theme",
         "pages": "pages",
+        "pagesexclude": "pagesExclude",
         "externalscripts": "externalScripts",
         "globaloverride": "globalOverride",
         "ignore": "ignore",
