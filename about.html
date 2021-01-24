@@ -2,10 +2,9 @@
 <html>
 
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="MarkBind 2.16.0">
+  <meta name="generator" content="MarkBind 2.17.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MarkBind - About Us</title>
   <link rel="stylesheet" href="markbind/css/bootstrap.min.css">
@@ -13,45 +12,51 @@
   <link rel="stylesheet" href="markbind/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="markbind/glyphicons/css/bootstrap-glyphicons.min.css">
   <link rel="stylesheet" href="markbind/css/octicons.css">
-  <link rel="stylesheet" href="markbind/css/github.min.css">
+  <link rel="stylesheet" href="markbind/css/codeblock-light.min.css">
   <link rel="stylesheet" href="markbind/css/markbind.min.css">
   <script src="markbind/js/polyfill.min.js"></script>
   <script src="markbind/js/vue.min.js"></script>
   <script src="markbind/js/markbind.min.js"></script>
   <script src="markbind/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
   <link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
-  <link rel="stylesheet" href="markbind/layouts/default/styles.css">
+
+  <link rel="stylesheet" href="/css/main.css">
   <link rel="icon" href="/favicon.ico">
 </head>
+<script>
+  const baseUrl = ''
+</script>
 
 <body>
   <div id="app">
-    <header fixed>
-      <link rel="stylesheet" href="/css/main.css">
-      <navbar type="dark" class="temp-navbar">
-        <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
-        <li><a href="/index.html" class="nav-link">HOME</a></li>
-        <div tags="environment--ug">
-          <li><a href="/userGuide/index.html" class="nav-link">USER GUIDE</a></li>
-        </div>
-        <div tags="environment--dg">
-          <li><a href="/devGuide/index.html" class="nav-link">DEVELOPER GUIDE</a></li>
-        </div>
-        <li><a href="/showcase.html" class="nav-link">SHOWCASE</a></li>
-        <li><a href="/about.html" class="nav-link">ABOUT</a></li>
-        <li>
-          <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
-        <li slot="right">
-          <form class="navbar-form">
-            <searchbar :data="searchData" placeholder="Search" :on-hit="searchCallback" menu-align-right></searchbar>
-          </form>
-        </li>
-      </navbar>
-    </header>
+    <div>
+      <header fixed>
+        <navbar type="dark" class=" temp-navbar">
+          <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
+          <li><a highlight-on="exact" href="/index.html" class="nav-link">HOME</a></li>
+          <div tags="environment--ug">
+            <li><a highlight-on="sibling-or-child" href="/userGuide/index.html" class="nav-link">USER GUIDE</a></li>
+          </div>
+          <div tags="environment--dg">
+            <li><a highlight-on="sibling-or-child" href="/devGuide/index.html" class="nav-link">DEVELOPER GUIDE</a></li>
+          </div>
+          <li><a highlight-on="exact" href="/showcase.html" class="nav-link">SHOWCASE</a></li>
+          <li><a highlight-on="exact" href="/about.html" class="nav-link">ABOUT</a></li>
+          <li>
+            <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
+          <li slot="right">
+            <form class="navbar-form">
+              <searchbar :data="searchData" algolia placeholder="Search" :on-hit="searchCallback" menu-align-right></searchbar>
+            </form>
+          </li>
+        </navbar>
+      </header>
+    </div>
     <div id="flex-body">
+      <div id="content-wrapper" class="fixed-header-padding">
 
-      <div id="content-wrapper">
-        <h1 id="about-us">About Us<span id="about-us" class="anchor"></span><a class="fa fa-anchor" href="#about-us" onclick="event.stopPropagation()"></a></h1>
+        <h1 id="about-us"><span id="about-us" class="anchor"></span>About Us<a class="fa fa-anchor" href="#about-us" onclick="event.stopPropagation()"></a></h1>
         <p><span class="lead">MarkBind is a project <strong>based in <a href="http://www.comp.nus.edu.sg/">National University of Singapore, School of Computing</a></strong>, and is funded by an education grant from <a href="http://www.cdtl.nus.edu.sg/">NUS Center for Development of Teaching and Learning</a>.</span></p>
         <p>The <strong>project team</strong>:</p>
         <ul>
@@ -89,28 +94,35 @@
           <li><a href="https://github.com/rachx"><strong>Rachael Sim Hwee Ling</strong></a>: <em>Project Member</em> for Jan 2018 - Dec 2018</li>
           <li><a href="https://www.github.com/Xenonym"><strong>Tan Zhen Yong</strong></a>: <em>Project Member</em> for Jan 2019 - Aug 2019</li>
         </ul>
-        <p><span aria-hidden="true" class="glyphicon glyphicon-send"></span> You can <strong>email us</strong> at <code v-pre>markbind</code> at <code v-pre>comp.nus.edu.sg</code></p>
+        <p><span aria-hidden="true" class="glyphicon glyphicon-send"></span> You can <strong>email us</strong> at <code class="hljs inline no-lang" v-pre>markbind</code> at <code class="hljs inline no-lang" v-pre>comp.nus.edu.sg</code></p>
         <p><span aria-hidden="true" class="glyphicon glyphicon-console"></span> Interested in <strong>contributing to MarkBind</strong>? Visit the <a href="https://github.com/MarkBind/markbind">MarkBind project on GitHub</a>.</p>
-        <p><i class="fa fa-arrow-circle-up fa-lg" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i></p>
+        <i class="fa fa-arrow-circle-up fa-lg d-print-none" id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true"></i>
       </div>
-
-
     </div>
-    <footer>
-      <div class="text-center">
-        <small>[Generated by <a href="https://markbind.org/">MarkBind 2.16.0</a> on Sun, Sep 20, 2020, 1:22:44 PM GMT+8]</small><br>
-        <small>This site is powered by <a href="https://www.netlify.com/">Netlify</a>.</small></div>
-    </footer>
+    <div>
+      <footer>
+        <div class="text-center">
+          <small>[Generated by <a href="https://markbind.org/">MarkBind 2.17.0</a> on Sun, Jan 24, 2021, 4:33:40 PM GMT+8]</small><br>
+          <small>This site is powered by <a href="https://www.netlify.com/">Netlify</a>.</small></div>
+      </footer>
+    </div>
   </div>
 </body>
 <script src="markbind/js/bootstrap-utility.min.js"></script>
 <script>
-  const baseUrl = ''
   MarkBind.setupWithSearch()
 </script>
-<script src="markbind/layouts/default/scripts.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 <script>
-  if (MarkBind.AfterSetup) MarkBind.AfterSetup()
+  docsearch({
+    apiKey: "5f9c2467d7adf15708b554873883c287",
+    indexName: "MarkBind_test",
+    inputSelector: "#algolia-search-input",
+    algoliaOptions: {
+      "hitsPerPage": 10
+    },
+    debug: false,
+  });
 </script>
 
 </html>
