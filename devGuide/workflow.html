@@ -19,13 +19,13 @@
   <script src="../markbind/js/markbind.min.js"></script>
   <script src="../markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
-  <link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
+  <link rel="stylesheet" href="/markbind/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/markbind/css/main.css">
+  <link rel="icon" href="/markbind/favicon.ico">
 </head>
 <script>
-  const baseUrl = ''
+  const baseUrl = '/markbind'
 </script>
 
 <body data-spy="scroll" data-target="#mb-page-nav" data-offset="100">
@@ -33,16 +33,16 @@
     <div>
       <header fixed>
         <navbar type="dark" class=" temp-navbar">
-          <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
-          <li><a highlight-on="exact" href="/index.html" class="nav-link">HOME</a></li>
+          <a slot="brand" href="/markbind/index.html" title="Home" class="navbar-brand"><img src="/markbind/images/logo-darkbackground.png" height="20"></a>
+          <li><a highlight-on="exact" href="/markbind/index.html" class="nav-link">HOME</a></li>
           <div tags="environment--ug">
-            <li><a highlight-on="sibling-or-child" href="/userGuide/index.html" class="nav-link">USER GUIDE</a></li>
+            <li><a highlight-on="sibling-or-child" href="/markbind/userGuide/index.html" class="nav-link">USER GUIDE</a></li>
           </div>
           <div tags="environment--dg">
-            <li><a highlight-on="sibling-or-child" href="/devGuide/index.html" class="nav-link">DEVELOPER GUIDE</a></li>
+            <li><a highlight-on="sibling-or-child" href="/markbind/devGuide/index.html" class="nav-link">DEVELOPER GUIDE</a></li>
           </div>
-          <li><a highlight-on="exact" href="/showcase.html" class="nav-link">SHOWCASE</a></li>
-          <li><a highlight-on="exact" href="/about.html" class="nav-link">ABOUT</a></li>
+          <li><a highlight-on="exact" href="/markbind/showcase.html" class="nav-link">SHOWCASE</a></li>
+          <li><a highlight-on="exact" href="/markbind/about.html" class="nav-link">ABOUT</a></li>
           <li>
             <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
           <li slot="right">
@@ -62,13 +62,13 @@
           <site-nav>
             <ul class="site-nav-list site-nav-list-root">
               <li>
-                <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/devGuide/devGuide.html">Contributing</a></div>
+                <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/markbind/devGuide/devGuide.html">Contributing</a></div>
               </li>
               <li>
-                <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/devGuide/settingUp.html">Setting up</a></div>
+                <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/markbind/devGuide/settingUp.html">Setting up</a></div>
               </li>
               <li>
-                <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/devGuide/workflow.html">Workflow</a></div>
+                <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/markbind/devGuide/workflow.html">Workflow</a></div>
               </li>
               <li>
                 <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)">Design
@@ -77,18 +77,18 @@
                     <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
                 <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/devGuide/design/projectStructure.html">Project Structure</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/devGuide/design/projectStructure.html">Project Structure</a></div>
                   </li>
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/devGuide/design/architecture.html">Architecture</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/devGuide/design/architecture.html">Architecture</a></div>
                   </li>
                 </ul>
               </li>
               <li>
-                <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/devGuide/writingPlugins.html">Writing Plugins</a></div>
+                <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/markbind/devGuide/writingPlugins.html">Writing Plugins</a></div>
               </li>
               <li>
-                <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/devGuide/projectManagement.html">Project management</a></div>
+                <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/markbind/devGuide/projectManagement.html">Project management</a></div>
               </li>
               <li>
                 <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)">Appendices
@@ -97,7 +97,7 @@
                     <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
                 <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/devGuide/styleGuides.html">Style guides</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/devGuide/styleGuides.html">Style guides</a></div>
                   </li>
                 </ul>
               </li>
@@ -116,7 +116,7 @@
         <ul>
           <li>You can start by looking through <a href="https://github.com/MarkBind/markbind/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22+sort%3Acomments-desc">these issues</a> marked <span href class="badge" style="color:white; background-color: #7057FF;">good first issue</span>. Don't do more than one of them though.</li>
           <li>As we squash the commits when merging a PR, there is <mark>no need to follow a strict commit organization or write elaborate commit messages for each commit</mark>.</li>
-          <li>You can refer to the <a href="/devGuide/design.html"><em>Design</em></a> page to learn about the design and implementation of MarkBind.</li>
+          <li>You can refer to the <a href="/markbind/devGuide/design.html"><em>Design</em></a> page to learn about the design and implementation of MarkBind.</li>
         </ul>
         <p>The sections below has more information about various stages of submitting a PR.</p>
         <h2 id="writing-code"><span id="writing-code" class="anchor"></span>Writing code<a class="fa fa-anchor" href="#writing-code" onclick="event.stopPropagation()"></a></h2>
@@ -126,7 +126,7 @@
             <p>Use JavaScript ES6 features if possible for better performance, e.g. Promise instead of callback.</p>
           </li>
           <li>
-            <p>Do note <a href="/devGuide/styleGuides.html">our style guides</a>.</p>
+            <p>Do note <a href="/markbind/devGuide/styleGuides.html">our style guides</a>.</p>
           </li>
           <li>
             <p>Do set up your IDE debugger! We provide several sample configurations for <trigger trigger="click" for="webstorm-debug">WebStorm</trigger> and <trigger trigger="click" for="vs-code-debug">VS Code</trigger>.</p>
@@ -138,11 +138,11 @@
                 <li>the <a href="https://markbind.org/userGuide/cliCommands.html#serve-command">lazy reload <code class="hljs inline no-lang" v-pre>-o</code></a> option to speed up page building</li>
                 <li>the <code class="hljs inline no-lang" v-pre>-d</code> developer option. (see <a href="#editing-frontend-features">below</a>)</li>
               </ul>
-              <p class="ml-4"><a href="/images/debugger/WebStorm_1.png" target="_self"><img src="/images/debugger/WebStorm_1.png" alt class="img-fluid"></a></p>
+              <p class="ml-4"><a href="/markbind/images/debugger/WebStorm_1.png" target="_self"><img src="/markbind/images/debugger/WebStorm_1.png" alt class="img-fluid"></a></p>
               <p><strong>2. Debugging all tests</strong> in the <code class="hljs inline no-lang" v-pre>npm run test</code> script:</p>
-              <p class="ml-4"><a href="/images/debugger/WebStorm_2.png" target="_self"><img src="/images/debugger/WebStorm_2.png" alt class="img-fluid"></a></p>
+              <p class="ml-4"><a href="/markbind/images/debugger/WebStorm_2.png" target="_self"><img src="/markbind/images/debugger/WebStorm_2.png" alt class="img-fluid"></a></p>
               <p><strong>3. Debugging only the cli package's tests</strong>:</p>
-              <p class="ml-4"><a href="/images/debugger/WebStorm_3.png" target="_self"><img src="/images/debugger/WebStorm_3.png" alt class="img-fluid"></a></p>
+              <p class="ml-4"><a href="/markbind/images/debugger/WebStorm_3.png" target="_self"><img src="/markbind/images/debugger/WebStorm_3.png" alt class="img-fluid"></a></p>
             </b-modal>
             <b-modal id="vs-code-debug" hide-footer size="lg" modal-class="mb-zoom" ref="vs-code-debug" class="algolia-no-index"><template slot="modal-title">Debugging Configurations - VS Code</template>
               <p>Refer <a href="https://code.visualstudio.com/docs/editor/debugging">here</a> for a general guide on adding and running debugging configurations in VS Code.</p>
@@ -301,7 +301,7 @@
         <p>When making changes to the Vue components in <code class="hljs inline no-lang" v-pre>packages/vue-components</code>, you should add new snapshot tests or adapt existing ones as appropriate.</p>
         <p>Once you're done, be sure to run the <code class="hljs inline no-lang" v-pre>updatetest</code> script mentioned <a href="#updating-and-writing-tests">above</a>!</p>
         <h2 id="linting"><span id="linting" class="anchor"></span>Linting<a class="fa fa-anchor" href="#linting" onclick="event.stopPropagation()"></a></h2>
-        <p>We follow <a href="/devGuide/styleGuides.html">our style guides</a>. Using a linter will help check and fix some of the code style errors in your code. It will save time for both you and your code reviewer. The linting tool we use is <a href="https://eslint.org/">ESLint</a> and <a href="https://stylelint.io/">StyleLint</a>. Here is a <a href="https://gist.github.com/nicholaschuayunzhi/bfe53dbb5f1a0f02d545d55956f9ab7e">gist</a> with an explanation of the ESLint rules chosen in markbind-cli.</p>
+        <p>We follow <a href="/markbind/devGuide/styleGuides.html">our style guides</a>. Using a linter will help check and fix some of the code style errors in your code. It will save time for both you and your code reviewer. The linting tool we use is <a href="https://eslint.org/">ESLint</a> and <a href="https://stylelint.io/">StyleLint</a>. Here is a <a href="https://gist.github.com/nicholaschuayunzhi/bfe53dbb5f1a0f02d545d55956f9ab7e">gist</a> with an explanation of the ESLint rules chosen in markbind-cli.</p>
         <p>Before making a commit or pull request, you should lint your code by running the following commands from the root of your project:</p>
         <ul>
           <li>To lint a specific file: <code class="hljs inline no-lang" v-pre>eslint path/to/specificfile.js</code></li>
@@ -314,7 +314,7 @@
         </box>
         <p></p>
         <h2 id="dependency-management"><span id="dependency-management" class="anchor"></span>Dependency management<a class="fa fa-anchor" href="#dependency-management" onclick="event.stopPropagation()"></a></h2>
-        <p>As mentioned in the <a href="/devGuide/settingUp.html#setting-up-the-dev-environment">setting up</a> page, MarkBind uses <a href="https://github.com/lerna/lerna">lerna</a> to manage the dependencies of its <a href="/devGuide/design.html">various packages</a>.</p>
+        <p>As mentioned in the <a href="/markbind/devGuide/settingUp.html#setting-up-the-dev-environment">setting up</a> page, MarkBind uses <a href="https://github.com/lerna/lerna">lerna</a> to manage the dependencies of its <a href="/markbind/devGuide/design.html">various packages</a>.</p>
         <p>Hence, instead of manually updating the version numbers in the packages' <code class="hljs inline no-lang" v-pre>package.json</code> files, you may consider using the <code class="hljs inline no-lang" v-pre>lerna add</code> <a href="https://github.com/lerna/lerna/tree/master/commands/add#readme">command</a> to speed things up!</p>
         <p>Also, when updating dependencies, ensure that it is updated in <em>all</em> packages using that dependency.</p>
         <box type="warning">
@@ -353,7 +353,7 @@
     <div>
       <footer>
         <div class="text-center">
-          <small>[Generated by <a href="https://markbind.org/">MarkBind 2.17.0</a> on Sun, Jan 24, 2021, 4:33:40 PM GMT+8]</small><br>
+          <small>[Generated by <a href="https://markbind.org/">MarkBind 2.17.0</a> on Sun, Jan 24, 2021, 4:35:04 PM GMT+8]</small><br>
           <small>This site is powered by <a href="https://www.netlify.com/">Netlify</a>.</small></div>
       </footer>
     </div>

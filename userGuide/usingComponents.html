@@ -19,13 +19,13 @@
   <script src="../markbind/js/markbind.min.js"></script>
   <script src="../markbind/js/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
-  <link rel="stylesheet" href="/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
+  <link rel="stylesheet" href="/markbind/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css">
 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/markbind/css/main.css">
+  <link rel="icon" href="/markbind/favicon.ico">
 </head>
 <script>
-  const baseUrl = ''
+  const baseUrl = '/markbind'
 </script>
 
 <body data-spy="scroll" data-target="#mb-page-nav" data-offset="100">
@@ -33,16 +33,16 @@
     <div>
       <header fixed>
         <navbar type="dark" class=" temp-navbar">
-          <a slot="brand" href="/index.html" title="Home" class="navbar-brand"><img src="/images/logo-darkbackground.png" height="20"></a>
-          <li><a highlight-on="exact" href="/index.html" class="nav-link">HOME</a></li>
+          <a slot="brand" href="/markbind/index.html" title="Home" class="navbar-brand"><img src="/markbind/images/logo-darkbackground.png" height="20"></a>
+          <li><a highlight-on="exact" href="/markbind/index.html" class="nav-link">HOME</a></li>
           <div tags="environment--ug">
-            <li><a highlight-on="sibling-or-child" href="/userGuide/index.html" class="nav-link">USER GUIDE</a></li>
+            <li><a highlight-on="sibling-or-child" href="/markbind/userGuide/index.html" class="nav-link">USER GUIDE</a></li>
           </div>
           <div tags="environment--dg">
-            <li><a highlight-on="sibling-or-child" href="/devGuide/index.html" class="nav-link">DEVELOPER GUIDE</a></li>
+            <li><a highlight-on="sibling-or-child" href="/markbind/devGuide/index.html" class="nav-link">DEVELOPER GUIDE</a></li>
           </div>
-          <li><a highlight-on="exact" href="/showcase.html" class="nav-link">SHOWCASE</a></li>
-          <li><a highlight-on="exact" href="/about.html" class="nav-link">ABOUT</a></li>
+          <li><a highlight-on="exact" href="/markbind/showcase.html" class="nav-link">SHOWCASE</a></li>
+          <li><a highlight-on="exact" href="/markbind/about.html" class="nav-link">ABOUT</a></li>
           <li>
             <a href="https://github.com/MarkBind/markbind" target="_blank" class="nav-link"><span><span aria-hidden="true" class="fab fa-github"></span></span></a></li>
           <li slot="right">
@@ -62,7 +62,7 @@
           <site-nav>
             <ul class="site-nav-list site-nav-list-root">
               <li>
-                <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/userGuide/gettingStarted.html"><strong>Getting Started</strong></a></div>
+                <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/gettingStarted.html"><strong>Getting Started</strong></a></div>
               </li>
               <li>
                 <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>Authoring Contents</strong>
@@ -71,28 +71,28 @@
                     <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
                 <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/authoringContents.html">Overview</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/authoringContents.html">Overview</a></div>
                   </li>
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/addingPages.html">Adding Pages</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/addingPages.html">Adding Pages</a></div>
                   </li>
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindSyntaxOverview.html">MarkBind Syntax Overview</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/markBindSyntaxOverview.html">MarkBind Syntax Overview</a></div>
                   </li>
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/formattingContents.html">Formatting Contents</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/formattingContents.html">Formatting Contents</a></div>
                   </li>
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingComponents.html">Using Components</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/usingComponents.html">Using Components</a></div>
                   </li>
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingHtmlJavaScriptCss.html">Using HTML, JavaScript, CSS</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/usingHtmlJavaScriptCss.html">Using HTML, JavaScript, CSS</a></div>
                   </li>
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tweakingThePageStructure.html">Tweaking the Page Structure</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/tweakingThePageStructure.html">Tweaking the Page Structure</a></div>
                   </li>
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/reusingContents.html">Reusing Contents</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/reusingContents.html">Reusing Contents</a></div>
                   </li>
                 </ul>
               </li>
@@ -103,25 +103,25 @@
                     <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
                 <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/workingWithSites.html">Overview</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/workingWithSites.html">Overview</a></div>
                   </li>
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/settingSiteProperties.html">Setting Site Properties</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/settingSiteProperties.html">Setting Site Properties</a></div>
                   </li>
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingPlugins.html">Using Plugins</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/usingPlugins.html">Using Plugins</a></div>
                   </li>
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/makingTheSiteSearchable.html">Making the Site Searchable</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/makingTheSiteSearchable.html">Making the Site Searchable</a></div>
                   </li>
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/themes.html">Applying Themes</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/themes.html">Applying Themes</a></div>
                   </li>
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/deployingTheSite.html">Deploying the Site</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/deployingTheSite.html">Deploying the Site</a></div>
                   </li>
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindInTheProjectWorkflow.html">MarkBind in the Project Workflow</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/markBindInTheProjectWorkflow.html">MarkBind in the Project Workflow</a></div>
                   </li>
                 </ul>
               </li>
@@ -132,25 +132,25 @@
                     <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
                 <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/cliCommands.html">CLI Commands</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/cliCommands.html">CLI Commands</a></div>
                   </li>
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/readerFacingFeatures.html">Reader-Facing Features</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/readerFacingFeatures.html">Reader-Facing Features</a></div>
                   </li>
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/fullSyntaxReference.html">Full Syntax Reference</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/fullSyntaxReference.html">Full Syntax Reference</a></div>
                   </li>
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/syntaxCheatSheet.html">Syntax Cheat Sheet</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/syntaxCheatSheet.html">Syntax Cheat Sheet</a></div>
                   </li>
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/siteJsonFile.html"><code class="hljs inline no-lang" v-pre>site.json</code> File</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/siteJsonFile.html"><code class="hljs inline no-lang" v-pre>site.json</code> File</a></div>
                   </li>
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/tipsAndTricks.html">Tips &amp; Tricks</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/tipsAndTricks.html">Tips &amp; Tricks</a></div>
                   </li>
                   <li>
-                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/glossary.html">Glossary</a></div>
+                    <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/glossary.html">Glossary</a></div>
                   </li>
                 </ul>
               </li>
@@ -162,7 +162,7 @@
         <p><span id="title" class="d-none">Using Components</span></p>
 
         <span id="link" class="d-none">
-          <span><a href="/userGuide/usingComponents.html"><em>User Guide → Using Components</em></a></span></span>
+          <span><a href="/markbind/userGuide/usingComponents.html"><em>User Guide → Using Components</em></a></span></span>
         <h1 id="using-components"><span id="using-components" class="anchor"></span>Using Components<a class="fa fa-anchor" href="#using-components" onclick="event.stopPropagation()"></a></h1>
         <span id="overview" class="lead">
           <p><strong>MarkBind provides a number of components</strong> (e.g., expandable panels, tabbed displays, navigation bars, etc.) that you can use to enhance the appearance/behavior of your pages.
@@ -806,7 +806,7 @@
               <div class="indented">
                 <box border-left-color="grey" background-color="white">
                   <p>
-                    <pic src="/userGuide/diagrams/sequence.png" width="300"></pic>
+                    <pic src="/markbind/userGuide/diagrams/sequence.png" width="300"></pic>
                   </p>
                 </box>
               </div>
@@ -838,7 +838,7 @@
             <div class="indented">
               <box border-left-color="grey" background-color="white">
                 <p>
-                  <pic src="/userGuide/diagrams/sequence.png" width="300"></pic>
+                  <pic src="/markbind/userGuide/diagrams/sequence.png" width="300"></pic>
                 </p>
               </box>
             </div>
@@ -852,37 +852,37 @@
             </template>
             <span id="puml-examples">
               <p><strong>Sequence Diagram</strong>:<br>
-                <pic src="/userGuide/diagrams/sequence.png"></pic>
+                <pic src="/markbind/userGuide/diagrams/sequence.png"></pic>
               </p>
               <p><strong>Use Case Diagram</strong>:<br>
-                <pic src="/userGuide/diagrams/usecase.png"></pic>
+                <pic src="/markbind/userGuide/diagrams/usecase.png"></pic>
               </p>
               <p><strong>Class Diagram</strong>:<br>
-                <pic src="/userGuide/diagrams/class.png"></pic>
+                <pic src="/markbind/userGuide/diagrams/class.png"></pic>
               </p>
               <p><strong>Activity Diagram</strong>:<br>
-                <pic src="/userGuide/diagrams/activity.png"></pic>
+                <pic src="/markbind/userGuide/diagrams/activity.png"></pic>
               </p>
               <p><strong>Component Diagram</strong>:<br>
-                <pic src="/userGuide/diagrams/component.png"></pic>
+                <pic src="/markbind/userGuide/diagrams/component.png"></pic>
               </p>
               <p><strong>State Diagram</strong>:<br>
-                <pic src="/userGuide/diagrams/state.png"></pic>
+                <pic src="/markbind/userGuide/diagrams/state.png"></pic>
               </p>
               <p><strong>Object Diagram</strong>:<br>
-                <pic src="/userGuide/diagrams/object.png"></pic>
+                <pic src="/markbind/userGuide/diagrams/object.png"></pic>
               </p>
               <p><strong>Gantt Diagram</strong>:<br>
-                <pic src="/userGuide/diagrams/gantt.png"></pic>
+                <pic src="/markbind/userGuide/diagrams/gantt.png"></pic>
               </p>
               <p><strong>Entity Relation Diagram</strong>:<br>
-                <pic src="/userGuide/diagrams/entityrelation.png"></pic>
+                <pic src="/markbind/userGuide/diagrams/entityrelation.png"></pic>
               </p>
               <p><strong>Ditaa Diagram</strong>:<br>
-                <pic src="/userGuide/diagrams/ditaa.png"></pic>
+                <pic src="/markbind/userGuide/diagrams/ditaa.png"></pic>
               </p>
               <p><strong>Archimate Diagram</strong>:<br>
-                <pic src="/userGuide/diagrams/archimate.png"></pic>
+                <pic src="/markbind/userGuide/diagrams/archimate.png"></pic>
               </p>
             </span></panel>
           <p></p>
@@ -915,7 +915,7 @@
                 <tr>
                   <td>src</td>
                   <td><code class="hljs inline no-lang" v-pre>string</code></td>
-                  <td>The URL of the diagram if your diagram is in another <code class="hljs inline no-lang" v-pre>.puml</code> file.<br>The URL can be specified as absolute or relative references. More info in: <em><a href="/userGuide/formattingContents.html#intraSiteLinks">Intra-Site Links</a></em></td>
+                  <td>The URL of the diagram if your diagram is in another <code class="hljs inline no-lang" v-pre>.puml</code> file.<br>The URL can be specified as absolute or relative references. More info in: <em><a href="/markbind/userGuide/formattingContents.html#intraSiteLinks">Intra-Site Links</a></em></td>
                 </tr>
                 <tr>
                   <td>width</td>
@@ -935,37 +935,37 @@
           <span id="examples" class="d-none">
             <div>
               <p><strong>Sequence Diagram</strong>:<br>
-                <pic src="/userGuide/diagrams/sequence.png"></pic>
+                <pic src="/markbind/userGuide/diagrams/sequence.png"></pic>
               </p>
               <p><strong>Use Case Diagram</strong>:<br>
-                <pic src="/userGuide/diagrams/usecase.png"></pic>
+                <pic src="/markbind/userGuide/diagrams/usecase.png"></pic>
               </p>
               <p><strong>Class Diagram</strong>:<br>
-                <pic src="/userGuide/diagrams/class.png"></pic>
+                <pic src="/markbind/userGuide/diagrams/class.png"></pic>
               </p>
               <p><strong>Activity Diagram</strong>:<br>
-                <pic src="/userGuide/diagrams/activity.png"></pic>
+                <pic src="/markbind/userGuide/diagrams/activity.png"></pic>
               </p>
               <p><strong>Component Diagram</strong>:<br>
-                <pic src="/userGuide/diagrams/component.png"></pic>
+                <pic src="/markbind/userGuide/diagrams/component.png"></pic>
               </p>
               <p><strong>State Diagram</strong>:<br>
-                <pic src="/userGuide/diagrams/state.png"></pic>
+                <pic src="/markbind/userGuide/diagrams/state.png"></pic>
               </p>
               <p><strong>Object Diagram</strong>:<br>
-                <pic src="/userGuide/diagrams/object.png"></pic>
+                <pic src="/markbind/userGuide/diagrams/object.png"></pic>
               </p>
               <p><strong>Gantt Diagram</strong>:<br>
-                <pic src="/userGuide/diagrams/gantt.png"></pic>
+                <pic src="/markbind/userGuide/diagrams/gantt.png"></pic>
               </p>
               <p><strong>Entity Relation Diagram</strong>:<br>
-                <pic src="/userGuide/diagrams/entityrelation.png"></pic>
+                <pic src="/markbind/userGuide/diagrams/entityrelation.png"></pic>
               </p>
               <p><strong>Ditaa Diagram</strong>:<br>
-                <pic src="/userGuide/diagrams/ditaa.png"></pic>
+                <pic src="/markbind/userGuide/diagrams/ditaa.png"></pic>
               </p>
               <p><strong>Archimate Diagram</strong>:<br>
-                <pic src="/userGuide/diagrams/archimate.png"></pic>
+                <pic src="/markbind/userGuide/diagrams/archimate.png"></pic>
               </p>
             </div>
           </span>
@@ -1398,7 +1398,7 @@
           </ul>
           <box type="warning">
             <div>
-              <p>Note: <strong>Navbars</strong> should be placed within a <a href="/userGuide/tweakingThePageStructure.html#headers">header file</a> to ensure that they are correctly positioned at the top of the page, above the <a href="/userGuide/tweakingThePageStructure.html#site-navigation-menus">site navigation</a> and <a href="/userGuide/tweakingThePageStructure.html#page-navigation-menus">page navigation</a> menus.</p>
+              <p>Note: <strong>Navbars</strong> should be placed within a <a href="/markbind/userGuide/tweakingThePageStructure.html#headers">header file</a> to ensure that they are correctly positioned at the top of the page, above the <a href="/markbind/userGuide/tweakingThePageStructure.html#site-navigation-menus">site navigation</a> and <a href="/markbind/userGuide/tweakingThePageStructure.html#page-navigation-menus">page navigation</a> menus.</p>
             </div>
           </box>
           <div>
@@ -1412,7 +1412,7 @@
               <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">navbar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>
 </span><span>  <span class="hljs-comment">&lt;!-- Brand as slot --&gt;</span>
 </span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;brand&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Home&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;navbar-brand&quot;</span>&gt;</span>MarkBind<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/userGuide/usingComponents.html#navbars&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>Highlighted Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/markbind/userGuide/usingComponents.html#navbars&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>Highlighted Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 </span><span>  <span class="hljs-comment">&lt;!-- You can use dropdown component --&gt;</span>
 </span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">dropdown</span> <span class="hljs-attr">header</span>=<span class="hljs-string">&quot;Dropdown&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>
 </span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#navbar&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;dropdown-item&quot;</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
@@ -1425,7 +1425,7 @@
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">navbar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;dark&quot;</span>&gt;</span>
 </span><span>  <span class="hljs-comment">&lt;!-- Brand as slot --&gt;</span>
 </span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;brand&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Home&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;navbar-brand&quot;</span>&gt;</span>MarkBind<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/userGuide/usingComponents.html#navbars&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>Highlighted Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/markbind/userGuide/usingComponents.html#navbars&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>Highlighted Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 </span><span>  <span class="hljs-comment">&lt;!-- You can use dropdown component --&gt;</span>
 </span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">dropdown</span> <span class="hljs-attr">header</span>=<span class="hljs-string">&quot;Dropdown&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>
 </span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#navbar&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;dropdown-item&quot;</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
@@ -1438,7 +1438,7 @@
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">navbar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;light&quot;</span>&gt;</span>
 </span><span>  <span class="hljs-comment">&lt;!-- Brand as slot --&gt;</span>
 </span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;brand&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Home&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;navbar-brand&quot;</span>&gt;</span>MarkBind<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/userGuide/usingComponents.html#navbars&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>Highlighted Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/markbind/userGuide/usingComponents.html#navbars&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>Highlighted Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 </span><span>  <span class="hljs-comment">&lt;!-- You can use dropdown component --&gt;</span>
 </span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">dropdown</span> <span class="hljs-attr">header</span>=<span class="hljs-string">&quot;Dropdown&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>
 </span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#navbar&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;dropdown-item&quot;</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
@@ -1456,7 +1456,7 @@
                 <navbar type="primary" class=" temp-navbar">
 
                   <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
-                  <li><a href="/userGuide/usingComponents.html#navbars" class="nav-link">Highlighted Link</a></li>
+                  <li><a href="/markbind/userGuide/usingComponents.html#navbars" class="nav-link">Highlighted Link</a></li>
 
                   <div class="nav-link temp-dropdown-placeholder"></div>
                   <div class="nav-link temp-dropdown temp-dropdown-placeholder"></div>
@@ -1474,7 +1474,7 @@
                 <navbar type="dark" class=" temp-navbar">
 
                   <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
-                  <li><a href="/userGuide/usingComponents.html#navbars" class="nav-link">Highlighted Link</a></li>
+                  <li><a href="/markbind/userGuide/usingComponents.html#navbars" class="nav-link">Highlighted Link</a></li>
 
                   <div class="nav-link temp-dropdown-placeholder"></div>
                   <div class="nav-link temp-dropdown temp-dropdown-placeholder"></div>
@@ -1492,7 +1492,7 @@
                 <navbar type="light" class=" temp-navbar">
 
                   <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
-                  <li><a href="/userGuide/usingComponents.html#navbars" class="nav-link">Highlighted Link</a></li>
+                  <li><a href="/markbind/userGuide/usingComponents.html#navbars" class="nav-link">Highlighted Link</a></li>
 
                   <div class="nav-link temp-dropdown-placeholder"></div>
                   <div class="nav-link temp-dropdown temp-dropdown-placeholder"></div>
@@ -1545,17 +1545,17 @@
             <span>In <code class="hljs inline no-lang" v-pre>{your-site}/_markbind/headers/header.md</code>, you can change <code class="hljs inline no-lang" v-pre>&lt;navbar type=&quot;dark/primary/light&quot;&gt;</code> to <code class="hljs inline no-lang" v-pre>&lt;navbar type=&quot;none&quot; add-class=&quot;bg-warning/danger/info/primary/success&quot;&gt;</code> to apply Bootstrap background styles.</span></b-modal>
           <p><strong><strong>Navbar Link Highlighting</strong></strong></p>
           <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">head-bottom</span>&gt;</span>
-</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/css/main.css&quot;</span>&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/markbind/css/main.css&quot;</span>&gt;</span>
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">head-bottom</span>&gt;</span>
 </span><span>
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">fixed</span>&gt;</span>
 </span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">navbar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;dark&quot;</span>&gt;</span>
-</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;brand&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/index.html&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Home&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;navbar-brand&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/images/logo-darkbackground.png&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;20&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">highlight-on</span>=<span class="hljs-string">&quot;exact&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/index.html&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>HOME<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;environment--ug&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">highlight-on</span>=<span class="hljs-string">&quot;sibling-or-child&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/userGuide/index.html&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>USER GUIDE<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;environment--dg&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">highlight-on</span>=<span class="hljs-string">&quot;sibling-or-child&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/devGuide/index.html&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>DEVELOPER GUIDE<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">highlight-on</span>=<span class="hljs-string">&quot;exact&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/showcase.html&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>SHOWCASE<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">highlight-on</span>=<span class="hljs-string">&quot;exact&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/about.html&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>ABOUT<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;brand&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/markbind/index.html&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Home&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;navbar-brand&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/markbind/images/logo-darkbackground.png&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;20&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">highlight-on</span>=<span class="hljs-string">&quot;exact&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/markbind/index.html&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>HOME<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;environment--ug&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">highlight-on</span>=<span class="hljs-string">&quot;sibling-or-child&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/markbind/userGuide/index.html&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>USER GUIDE<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">tags</span>=<span class="hljs-string">&quot;environment--dg&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">highlight-on</span>=<span class="hljs-string">&quot;sibling-or-child&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/markbind/devGuide/index.html&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>DEVELOPER GUIDE<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">highlight-on</span>=<span class="hljs-string">&quot;exact&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/markbind/showcase.html&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>SHOWCASE<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+</span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">highlight-on</span>=<span class="hljs-string">&quot;exact&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/markbind/about.html&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>ABOUT<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 </span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
 </span><span>      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://github.com/MarkBind/markbind&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;_blank&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">md</span>&gt;</span>:fab-github:<span class="hljs-tag">&lt;/<span class="hljs-name">md</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 </span><span>    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
@@ -1604,7 +1604,7 @@
             <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">navbar</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>
 </span><span>  <span class="hljs-comment">&lt;!-- Brand as slot --&gt;</span>
 </span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;brand&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Home&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;navbar-brand&quot;</span>&gt;</span>MarkBind<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/userGuide/usingComponents.html#navbars&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>Highlighted Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/markbind/userGuide/usingComponents.html#navbars&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>Highlighted Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 </span><span>  <span class="hljs-comment">&lt;!-- You can use dropdown component --&gt;</span>
 </span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">dropdown</span> <span class="hljs-attr">header</span>=<span class="hljs-string">&quot;Dropdown&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;nav-link&quot;</span>&gt;</span>
 </span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#navbar&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;dropdown-item&quot;</span>&gt;</span>Option<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
@@ -1619,7 +1619,7 @@
             <navbar type="primary" class=" temp-navbar">
 
               <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
-              <li><a href="/userGuide/usingComponents.html#navbars" class="nav-link">Highlighted Link</a></li>
+              <li><a href="/markbind/userGuide/usingComponents.html#navbars" class="nav-link">Highlighted Link</a></li>
 
               <div class="nav-link temp-dropdown-placeholder"></div>
               <div class="nav-link temp-dropdown temp-dropdown-placeholder"></div>
@@ -1637,7 +1637,7 @@
             <navbar type="dark" class=" temp-navbar">
 
               <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
-              <li><a href="/userGuide/usingComponents.html#navbars" class="nav-link">Highlighted Link</a></li>
+              <li><a href="/markbind/userGuide/usingComponents.html#navbars" class="nav-link">Highlighted Link</a></li>
 
               <div class="nav-link temp-dropdown-placeholder"></div>
               <div class="nav-link temp-dropdown temp-dropdown-placeholder"></div>
@@ -1655,7 +1655,7 @@
             <navbar type="light" class=" temp-navbar">
 
               <a slot="brand" href="/" title="Home" class="navbar-brand">MarkBind</a>
-              <li><a href="/userGuide/usingComponents.html#navbars" class="nav-link">Highlighted Link</a></li>
+              <li><a href="/markbind/userGuide/usingComponents.html#navbars" class="nav-link">Highlighted Link</a></li>
 
               <div class="nav-link temp-dropdown-placeholder"></div>
               <div class="nav-link temp-dropdown temp-dropdown-placeholder"></div>
@@ -1997,7 +1997,7 @@
             <div class="indented">
               <box border-left-color="grey" background-color="white">
                 <p>
-                  <panel src="/userGuide/syntax/extra/loadContent._include_.html#fragment" minimized fragment="fragment" class="algolia-no-index"><template slot="header">
+                  <panel src="/markbind/userGuide/syntax/extra/loadContent._include_.html#fragment" minimized fragment="fragment" class="algolia-no-index"><template slot="header">
                       <p>Content loaded in from 'src'</p>
                     </template></panel>
                 </p>
@@ -2013,7 +2013,7 @@
 
             <p><span class="dimmed">CODE:</span></p>
             <div class="indented">
-              <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">panel</span> <span class="hljs-attr">header</span>=<span class="hljs-string">&quot;Try clicking on my pop-up button&quot;</span> <span class="hljs-attr">popup-url</span>=<span class="hljs-string">&quot;/userGuide/syntax/extra/loadContent.html&quot;</span>&gt;</span>
+              <pre><code class="no-line-numbers hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">panel</span> <span class="hljs-attr">header</span>=<span class="hljs-string">&quot;Try clicking on my pop-up button&quot;</span> <span class="hljs-attr">popup-url</span>=<span class="hljs-string">&quot;/markbind/userGuide/syntax/extra/loadContent.html&quot;</span>&gt;</span>
 </span><span>  This panel has a popup.
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">panel</span>&gt;</span>
 </span></code></pre>
@@ -2021,7 +2021,7 @@
             <p><span class="dimmed">OUTPUT:</span></p>
             <div class="indented">
               <box border-left-color="grey" background-color="white">
-                <panel popup-url="/userGuide/syntax/extra/loadContent.html" class="algolia-no-index"><template slot="header">
+                <panel popup-url="/markbind/userGuide/syntax/extra/loadContent.html" class="algolia-no-index"><template slot="header">
                     <p>Try clicking on my pop-up button</p>
                   </template>
                   This panel has a popup.
@@ -2046,7 +2046,7 @@
             <p><span class="dimmed">OUTPUT:</span></p>
             <div class="indented">
               <box border-left-color="grey" background-color="white">
-                <panel src="/userGuide/syntax/extra/loadContent._include_.html#fragment" preload fragment="fragment" class="algolia-no-index"><template slot="header">
+                <panel src="/markbind/userGuide/syntax/extra/loadContent._include_.html#fragment" preload fragment="fragment" class="algolia-no-index"><template slot="header">
                     <p>Right click and inspect my HTML before expanding me!</p>
                   </template>
                   <p>You should be able to find this text before expanding the Panel.</p>
@@ -2323,7 +2323,7 @@
                   <td>src</td>
                   <td><code class="hljs inline no-lang" v-pre>string</code></td>
                   <td></td>
-                  <td><strong>This must be specified.</strong><br>The URL of the image.<br>The URL can be specified as absolute or relative references. More info in: <em><a href="/userGuide/formattingContents.html#intraSiteLinks">Intra-Site Links</a></em></td>
+                  <td><strong>This must be specified.</strong><br>The URL of the image.<br>The URL can be specified as absolute or relative references. More info in: <em><a href="/markbind/userGuide/formattingContents.html#intraSiteLinks">Intra-Site Links</a></em></td>
                 </tr>
                 <tr>
                   <td>width</td>
@@ -2621,7 +2621,7 @@
                   </template><template slot="header">
                     <p>Which of the following is correct?</p>
                   </template>
-                  <pic src="/images/math-question.jpg" alt="math question image" height="200" class="d-block mx-auto">
+                  <pic src="/markbind/images/math-question.jpg" alt="math question image" height="200" class="d-block mx-auto">
                     <p><small>Adapted from <a href="https://www.dailymail.co.uk/femail/article-4702868/Can-pass-intelligence-test.html">Daily Mail</a></small></p>
                   </pic>
                   <p></p>
@@ -2668,7 +2668,7 @@
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Which of the following is correct?<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Challenge: Try to get all the answers on your first try! ⭐️ ⭐️<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </span><span>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">pic</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/images/math-question.jpg&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;math question image&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;200&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;d-block mx-auto&quot;</span>&gt;</span>
+</span><span>  <span class="hljs-tag">&lt;<span class="hljs-name">pic</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/markbind/images/math-question.jpg&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;math question image&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;200&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;d-block mx-auto&quot;</span>&gt;</span>
 </span><span><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>Adapted from <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://www.dailymail.co.uk/femail/article-4702868/Can-pass-intelligence-test.html&quot;</span>&gt;</span>Daily Mail<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span>
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">pic</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
@@ -2692,7 +2692,7 @@
                       <p>Which of the following is correct?</p>
                       <p>Challenge: Try to get all the answers on your first try! ⭐️ ⭐️</p>
                     </div>
-                    <pic src="/images/math-question.jpg" alt="math question image" height="200" class="d-block mx-auto">
+                    <pic src="/markbind/images/math-question.jpg" alt="math question image" height="200" class="d-block mx-auto">
                       <p><small>Adapted from <a href="https://www.dailymail.co.uk/femail/article-4702868/Can-pass-intelligence-test.html">Daily Mail</a></small></p>
                     </pic>
                     <p></p>
@@ -3309,7 +3309,7 @@
                     <td>algolia</td>
                     <td><code class="hljs inline no-lang" v-pre>Boolean</code></td>
                     <td><code class="hljs inline no-lang" v-pre>false</code></td>
-                    <td>Whether the searchbar should be connected to <a href="/userGuide/usingPlugins.html#algolia-enabling-algolia-docsearch">Algolia DocSearch</a>.</td>
+                    <td>Whether the searchbar should be connected to <a href="/markbind/userGuide/usingPlugins.html#algolia-enabling-algolia-docsearch">Algolia DocSearch</a>.</td>
                   </tr>
                   <tr>
                     <td>data</td>
@@ -3340,10 +3340,10 @@
             </div>
             <box type="warning">
               <p>Note: If you are using MarkBind's search functionality, then <code class="hljs inline no-lang" v-pre>enableSearch</code> <strong>must be set to <code class="hljs inline no-lang" v-pre>true</code> in <code class="hljs inline no-lang" v-pre>site.json</code></strong>.</p>
-              <p>See: <a href="/userGuide/siteJsonFile.html#enable-search">User Guide: Site Configuration → enableSearch</a>.</p>
+              <p>See: <a href="/markbind/userGuide/siteJsonFile.html#enable-search">User Guide: Site Configuration → enableSearch</a>.</p>
             </box>
-            <p><span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> Related topic: <a href="/userGuide/makingTheSiteSearchable.html">User Guide: Making the Site Searchable</a>.</span></p>
-            <p><span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> Related topic: <a href="/userGuide/usingPlugins.html#algolia-enabling-algolia-docsearch">User Guide: Using Plugins → Algolia: Enabling Algolia DocSearch</a>.</span></p>
+            <p><span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> Related topic: <a href="/markbind/userGuide/makingTheSiteSearchable.html">User Guide: Making the Site Searchable</a>.</span></p>
+            <p><span class="dimmed"><span aria-hidden="true" class="fas fa-info-circle"></span> Related topic: <a href="/markbind/userGuide/usingPlugins.html#algolia-enabling-algolia-docsearch">User Guide: Using Plugins → Algolia: Enabling Algolia DocSearch</a>.</span></p>
             <p></p>
           </span>
           <p></p>
@@ -3555,11 +3555,11 @@
             <p><span class="dimmed">OUTPUT:</span></p>
             <div class="indented">
               <box border-left-color="grey" background-color="white">
-                <thumbnail circle src="/images/deer.jpg" size="100"></thumbnail>
+                <thumbnail circle src="/markbind/images/deer.jpg" size="100"></thumbnail>
                 <thumbnail circle background="#dff5ff" size="100">📖</thumbnail>
                 <thumbnail circle background="#333" font-color="white" size="100"><em><strong>CS</strong></em></thumbnail>
                 <thumbnail circle font-color="darkgreen" border="3px solid darkgreen" size="100"><span aria-hidden="true" class="fas fa-book"></span></thumbnail>
-                <thumbnail src="/images/deer.jpg" size="100"></thumbnail>
+                <thumbnail src="/markbind/images/deer.jpg" size="100"></thumbnail>
                 <thumbnail background="#dff5ff" size="100">📖</thumbnail>
                 <thumbnail background="#333" font-color="white" size="100"><em><strong>CS</strong></em></thumbnail>
                 <thumbnail font-color="darkgreen" border="3px solid darkgreen" size="100"><span aria-hidden="true" class="fas fa-book"></span></thumbnail>
@@ -3624,13 +3624,13 @@
                   <td>src</td>
                   <td><code class="hljs inline no-lang" v-pre>string</code></td>
                   <td></td>
-                  <td>The URL of the image.<br>The URL can be specified as absolute or relative references. More info in: <em><a href="/userGuide/formattingContents.html#intraSiteLinks">Intra-Site Links</a></em></td>
+                  <td>The URL of the image.<br>The URL can be specified as absolute or relative references. More info in: <em><a href="/markbind/userGuide/formattingContents.html#intraSiteLinks">Intra-Site Links</a></em></td>
                 </tr>
                 <tr>
                   <td>text</td>
                   <td><code class="hljs inline no-lang" v-pre>string</code></td>
                   <td></td>
-                  <td>The text to use in the thumbnail, <a href="/userGuide/formattingContents.html#icons">icons</a>, <a href="/userGuide/formattingContents.html#emoji">emojis</a> and markdown are supported here</td>
+                  <td>The text to use in the thumbnail, <a href="/markbind/userGuide/formattingContents.html#icons">icons</a>, <a href="/markbind/userGuide/formattingContents.html#emoji">emojis</a> and markdown are supported here</td>
                 </tr>
               </tbody>
             </table>
@@ -3854,13 +3854,13 @@
                 <p><span class="dimmed">CODE:</span></p>
                 <div class="indented">
                   <pre><code class="no-line-numbers hljs" v-pre><span>&lt;site-nav&gt;
-</span><span>* [**Getting Started**](/userGuide/gettingStarted.html)
+</span><span>* [**Getting Started**](/markbind/userGuide/gettingStarted.html)
 </span><span>* **Authoring Contents** :expanded:
-</span><span>  * [Overview](/userGuide/authoringContents.html)
-</span><span>  * [Adding Pages](/userGuide/addingPages.html)
-</span><span>  * [MarkBind Syntax Overview](/userGuide/markBindSyntaxOverview.html)
-</span><span>  * [Formatting Contents](/userGuide/formattingContents.html)
-</span><span>  * [Using Components](/userGuide/usingComponents.html)
+</span><span>  * [Overview](/markbind/userGuide/authoringContents.html)
+</span><span>  * [Adding Pages](/markbind/userGuide/addingPages.html)
+</span><span>  * [MarkBind Syntax Overview](/markbind/userGuide/markBindSyntaxOverview.html)
+</span><span>  * [Formatting Contents](/markbind/userGuide/formattingContents.html)
+</span><span>  * [Using Components](/markbind/userGuide/usingComponents.html)
 </span><span>&lt;/site-nav&gt;
 </span></code></pre>
                 </div>
@@ -3870,7 +3870,7 @@
                     <site-nav>
                       <ul class="site-nav-list site-nav-list-root">
                         <li>
-                          <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/userGuide/gettingStarted.html"><strong>Getting Started</strong></a></div>
+                          <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/gettingStarted.html"><strong>Getting Started</strong></a></div>
                         </li>
                         <li>
                           <div class="site-nav-default-list-item site-nav-list-item-0" onclick="handleSiteNavClick(this)"><strong>Authoring Contents</strong>
@@ -3879,19 +3879,19 @@
                               <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></i></div>
                           <ul class="site-nav-dropdown-container site-nav-dropdown-container-open site-nav-list">
                             <li>
-                              <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/authoringContents.html">Overview</a></div>
+                              <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/authoringContents.html">Overview</a></div>
                             </li>
                             <li>
-                              <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/addingPages.html">Adding Pages</a></div>
+                              <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/addingPages.html">Adding Pages</a></div>
                             </li>
                             <li>
-                              <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/markBindSyntaxOverview.html">MarkBind Syntax Overview</a></div>
+                              <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/markBindSyntaxOverview.html">MarkBind Syntax Overview</a></div>
                             </li>
                             <li>
-                              <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/formattingContents.html">Formatting Contents</a></div>
+                              <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/formattingContents.html">Formatting Contents</a></div>
                             </li>
                             <li>
-                              <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/userGuide/usingComponents.html">Using Components</a></div>
+                              <div class="site-nav-default-list-item site-nav-list-item-1" onclick="handleSiteNavClick(this)"><a href="/markbind/userGuide/usingComponents.html">Using Components</a></div>
                             </li>
                           </ul>
                         </li>
@@ -3913,13 +3913,13 @@
         <div>
           <h2 id="page-navigation-menus"><span id="page-navigation-menus" class="anchor"></span>Page Navigation Menus<a class="fa fa-anchor" href="#page-navigation-menus" onclick="event.stopPropagation()"></a></h2>
           <div id="content">
-            <p><strong>A <em>Page Navigation Menu</em> (<mark><em>pageNav</em> for short</mark>) a list of the current page's headings.</strong> Page navigation menus are only available for use in <a href="/userGuide/tweakingThePageStructure.html#layouts">layouts</a>.</p>
+            <p><strong>A <em>Page Navigation Menu</em> (<mark><em>pageNav</em> for short</mark>) a list of the current page's headings.</strong> Page navigation menus are only available for use in <a href="/markbind/userGuide/tweakingThePageStructure.html#layouts">layouts</a>.</p>
             <p><strong><strong>Adding a pageNav</strong></strong></p>
             <ol>
               <li>
                 <p><strong>Specify the smallest heading level you want to be included</strong> within the <code class="hljs inline no-lang" v-pre>&lt;frontmatter&gt;</code> of a page with <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">The value <code class="hljs inline no-lang" v-pre>default</code> will use <code class="hljs inline no-lang" v-pre>headingIndexingLevel</code> within <code class="hljs inline no-lang" v-pre>site.json</code>.</span><code class="hljs inline no-lang" v-pre>&quot;default&quot;</code></span> or a <span data-mb-component-type="tooltip" v-b-tooltip.hover.top.html="tooltipInnerContentGetter" class="trigger"><span data-mb-slot-name="_content">HTML defines six levels of headings, numbered from <br><code class="hljs inline no-lang" v-pre>1 to 6</code>.</span><code class="hljs inline no-lang" v-pre>heading level</code></span>.</p>
                 <box type="info" seamless>
-                  <p>The <code class="hljs inline no-lang" v-pre>default</code> level uses the <a href="/userGuide/siteJsonFile.html#headingindexinglevel"><code class="hljs inline no-lang" v-pre>headingIndexingLevel</code> property</a> of your site configuration file.
+                  <p>The <code class="hljs inline no-lang" v-pre>default</code> level uses the <a href="/markbind/userGuide/siteJsonFile.html#headingindexinglevel"><code class="hljs inline no-lang" v-pre>headingIndexingLevel</code> property</a> of your site configuration file.
                   </p>
                 </box>
                 <p></p>
@@ -3939,7 +3939,7 @@
 </span><span>  pageNavTitle: &quot;Chapters of This Page&quot;
 </span><span><span class="hljs-tag">&lt;/<span class="hljs-name">frontmatter</span>&gt;</span>
 </span></code></pre>
-              <p>Then, in your <a href="/userGuide/tweakingThePageStructure.html#layouts">layout file</a>, use the <code class="hljs inline no-lang" v-pre>{{ pageNav }}</code> variable to position the pageNav.</p>
+              <p>Then, in your <a href="/markbind/userGuide/tweakingThePageStructure.html#layouts">layout file</a>, use the <code class="hljs inline no-lang" v-pre>{{ pageNav }}</code> variable to position the pageNav.</p>
               <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big>
                 <trigger for="modal:page-nav-example">Example usage of the <code class="hljs inline no-lang" v-pre>{{ pageNav }}</code> variable</trigger>
               </p>
@@ -4022,7 +4022,7 @@
             </div>
           </div>
           <span id="examples" class="d-none">
-            <p>You can see an example of a Page Navigation Bar <mark>on the right side</mark> of <a target="_blank" href="/userGuide/formattingContents.html">this page</a>.
+            <p>You can see an example of a Page Navigation Bar <mark>on the right side</mark> of <a target="_blank" href="/markbind/userGuide/formattingContents.html">this page</a>.
             </p>
           </span>
           <p></p>
@@ -4190,7 +4190,7 @@
             <img slot="icon" width="75%" src="https://icons8.com/vue-static/landings/animated-icons/icons/cloud/cloud.gif">
             some very useful info
           </box>
-          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Use <a href="/userGuide/usingComponents.html#thumbnails">thumbnail</a> as the icon.</p>
+          <p><big><span class="badge badge-pill badge-secondary" style="padding-bottom: 4px; margin-right: 5px;">Example</span></big> Use <a href="/markbind/userGuide/usingComponents.html#thumbnails">thumbnail</a> as the icon.</p>
           <pre><code class="hljs html" v-pre><span><span class="hljs-tag">&lt;<span class="hljs-name">box</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;info&quot;</span> <span class="hljs-attr">light</span>&gt;</span>
 </span><span>    <span class="hljs-tag">&lt;<span class="hljs-name">thumbnail</span> <span class="hljs-attr">circle</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;icon&quot;</span> <span class="hljs-attr">text</span>=<span class="hljs-string">&quot;:book:&quot;</span> <span class="hljs-attr">background</span>=<span class="hljs-string">&quot;#dff5ff&quot;</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;50&quot;</span>/&gt;</span>
 </span><span>    use thumbnail as the icon
@@ -4263,7 +4263,7 @@
     <div>
       <footer>
         <div class="text-center">
-          <small>[Generated by <a href="https://markbind.org/">MarkBind 2.17.0</a> on Sun, Jan 24, 2021, 4:33:40 PM GMT+8]</small><br>
+          <small>[Generated by <a href="https://markbind.org/">MarkBind 2.17.0</a> on Sun, Jan 24, 2021, 4:35:04 PM GMT+8]</small><br>
           <small>This site is powered by <a href="https://www.netlify.com/">Netlify</a>.</small></div>
       </footer>
     </div>
