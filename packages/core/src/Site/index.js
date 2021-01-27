@@ -1192,7 +1192,7 @@ class Site {
       console.log(repoSlug);
       console.log(githubToken.split('a').reduce((x, y) => `${x}-${y}`, ''));
 
-      options.repo = `https://${githubToken}@github.com/${repoSlug}.git`;
+      options.repo = `https://github-actions:${githubToken}@github.com/${repoSlug}.git`;
     }
 
     publish(basePath, options);
