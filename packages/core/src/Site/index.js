@@ -1189,7 +1189,7 @@ class Site {
         throw new Error('-c/--ci should only be run in CI environments.');
       }
 
-      options.repo = `https://github-actions:${githubToken}@github.com/${repoSlug}.git`;
+      options.repo = `https://username:${githubToken}@github.com/${repoSlug}.git`;
     }
 
     publish(basePath, options);
