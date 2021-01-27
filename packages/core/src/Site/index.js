@@ -1189,9 +1189,6 @@ class Site {
         throw new Error('-c/--ci should only be run in CI environments.');
       }
 
-      console.log(repoSlug);
-      console.log(githubToken.split('a').reduce((x, y) => `${x}-${y}`, ''));
-
       options.repo = `https://github-actions:${githubToken}@github.com/${repoSlug}.git`;
     }
 
